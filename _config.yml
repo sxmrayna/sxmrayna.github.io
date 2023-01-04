@@ -1,0 +1,58 @@
+title: River of Memories
+author: Xinmeng
+avatar: /logo.png
+email: sxmrayna@gmail.com
+location: Beijing, China
+description: Even water has memory that no matter where it ends up, it'll always remember where it's been. 
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "https://sxmrayna.github.io" # the base hostname & protocol for your site, e.g. http://example.com
+
+
+# Build settings
+theme: minima
+gems:
+  - jekyll-paginate-v2
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-paginate-v2
+  #- jekyll-seo-tag
+
+# Jekyll SEO Tag (Optional)
+# =========================
+#twitter:
+  #username: 
+  #card: summary
+logo: logo.png
+social:
+  name:
+  links:
+    #- https://twitter.com/ngzhio
+    #- https://www.facebook.com/ngzhio
+    #- https://github.com/ngzhio
+lang: en
+
+pagination:
+  enabled: true
+  per_page: 10
+  permalink: '/page/:num/'
+  title: ' - page :num'
+  limit: 0
+  sort_field: 'date'
+  sort_reverse: true
+
+
+exclude:
+   - .sass-cache/
+   - .jekyll-cache/
+   - gemfiles/
+   - Gemfile
+   - Gemfile.lock
+   - node_modules/
+   - vendor/bundle/
+   - vendor/cache/
+   - vendor/gems/
+   - vendor/ruby/
+   - README.md
+   - scripts/
+   - jekyll-theme-hamilton.gemspec
