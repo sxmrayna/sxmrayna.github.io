@@ -23,7 +23,7 @@ updated `Jan 02 2023`
 - Listening 🎧
      - 
 - Recent Recommendations
-     - read [2022 Year Review](/year%20review/2022/12/31/2022-Year-Review.html)
+     - read [2022 Year Review](/critiques/2022/12/31/2022-Year-Review.html)
 
 
 [What is a “now page”?](https://nownownow.com/about)
