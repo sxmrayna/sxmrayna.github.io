@@ -19,7 +19,7 @@ taken on `May 31 2022`
 
 👩🏻‍🎓 Graduated from the University of Zurich, Switzerland🇨🇭
 
-🗣 Speaking Chinese Mandarin, English, and German.
+🗣 Speak Chinese Mandarin, English, and German.
 
 ---
 When not working or studying,  

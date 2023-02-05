@@ -281,10 +281,6 @@
 <lastmod>2019-09-16T00:00:00+08:00</lastmod>
 </url>
 <url>
-<loc>http://localhost:4000/journal/2019/09/23/2019-09-23.html</loc>
-<lastmod>2019-09-23T00:00:00+08:00</lastmod>
-</url>
-<url>
 <loc>http://localhost:4000/journal/2019/09/25/2019-09-25.html</loc>
 <lastmod>2019-09-25T00:00:00+08:00</lastmod>
 </url>
@@ -385,8 +381,12 @@
 <lastmod>2022-08-29T00:00:00+08:00</lastmod>
 </url>
 <url>
-<loc>http://localhost:4000/year%20review/2022/12/31/2022-Year-Review.html</loc>
+<loc>http://localhost:4000/critiques/2022/12/31/2022-Year-Review.html</loc>
 <lastmod>2022-12-31T00:00:00+08:00</lastmod>
+</url>
+<url>
+<loc>http://localhost:4000/critiques/2023/01/31/Quick-Recap-on-Jan-2023.html</loc>
+<lastmod>2023-01-31T00:00:00+08:00</lastmod>
 </url>
 <url>
 <loc>http://localhost:4000/about/</loc>
