@@ -5,7 +5,7 @@ title: Quick Recap on Jan 2023
 date: 2023-01-31
 category: Critiques
 tags: book movie series TVshow documentary music performance
-excerpt: 
+excerpt: leader说我timecard可以填的工作分类是pro bono ——学习了一下这个词汇，一瞬间有点迷惑重点是“为公众利益”还是“无偿服务”
 ---
 * TOC
 {:toc}
