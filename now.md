@@ -11,7 +11,7 @@ updated `Feb 05 2023`
      - working for [Thoughtworks](https://www.thoughtworks.com/)
      - learning data business analysis 👩🏻‍💻
      - working on establishing tag management system for banking call center 🏦
-     - turning 28 😆
+     - turning 28 y/o 😆
 - Reading 📖
      - [演奏之外](https://book.douban.com/subject/35939322/)
      - [我们为什么还没有死掉 / Why Aren't We Dead Yet? The Curious Person's Guide to the Immune System]()
