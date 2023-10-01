@@ -8,11 +8,7 @@ Hi, I'm Xinmeng! 🙋🏻‍♀️
 
 I'm a Data&AI Product Manager👩🏻‍💻 / Wanderer⛰️ / Humanities Lover🏛 / Dreaming Doer🌈
 
-[Assertive Advocate](https://www.16personalities.com/infj-personality): INFJ-T -> INFJ-A (got a bit more confident :P)
-![INFJ-T](/img/INFJ-T.png)
-taken on `Feb 25 2020`
-![INFJ-A](/img/INFJ-A.png)
-taken on `May 31 2022`
+[Assertive Advocate](https://www.16personalities.com/infj-personality)(INFJ-A)
 
 ---
 🏙 Hometown & Current base: Beijing, China 🇨🇳
