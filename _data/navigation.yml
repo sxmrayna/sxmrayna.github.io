@@ -10,11 +10,11 @@
     url: /tags/
 - title: Shelves 📚
   url: https://mildwildwind.notion.site/Shelves-f881f08db0844389a2ca45ff5d2e8d11?pvs=4
+- title: Portfolio
+  url: /portfolio/
 - title: About
   url: /about/
-- title: More
-  sublinks:
-    - title: Portfolio
-      url: /portfolio/
-    - title: CV
-      url: https://drive.google.com/file/d/1-VQeZ0qqjYxEswKCV_GHCbn9HPnHUJaL/view?usp=sharing
+#- title: More
+  #sublinks:
+    #- title: CV
+      #url: https://drive.google.com/file/d/1-VQeZ0qqjYxEswKCV_GHCbn9HPnHUJaL/view?usp=sharing
