@@ -2,7 +2,7 @@
 layout: post
 title: Calfeisental to Weisstannental
 date: 2019-07-21
-categories: Trips Writings
+categories: Trips Writings English
 tags: Switzerland
 excerpt: An impressive 2-day-hike in the valley from Calfeisental to Weisstannental
 ---

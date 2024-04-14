@@ -6,9 +6,9 @@ permalink: /about/
 
 Hi, I'm Xinmeng! 🙋🏻‍♀️
 
-I'm a Data&AI Product Manager👩🏻‍💻 / Wanderer⛰️ / Humanities Lover🏛 / Dreaming Doer🌈
+I'm a Technical Product Manager 👩🏻‍💻 / Wanderer ⛰️ / Humanities Lover 🏛 / Dreaming Doer 🌈
 
-[Assertive Advocate](https://www.16personalities.com/infj-personality)(INFJ-A)
+[Assertive Advocate](https://www.16personalities.com/infj-personality) (INFJ-A)
 
 ---
 🏙 Hometown & Current base: Beijing, China 🇨🇳
@@ -19,8 +19,9 @@ I'm a Data&AI Product Manager👩🏻‍💻 / Wanderer⛰️ / Humanities Lover
 
 ---
 When not working or studying,  
-I love reading and exploring new places and cultures.
+I love exploring diverse cultures through reading 📖 and traveling ⛰️.
 
-Feel free to hit me up 😉
+I'm always happy to chat about any mentioned topics that you are interested in too!  
+⬅️ Feel free to reach out through any of the channels listed in the sidebar 😉
 
 ![Matterhorn](/img/Matterhorn.jpg)
