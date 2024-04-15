@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 《宝岛一村》观后 | [EN] Reflecting on 'The Village'
+title: 《宝岛一村》观后 | (EN) Reflecting on 'The Village'
 date: 2023-08-13
 categories: Critiques English
 tags: theater Taiwan

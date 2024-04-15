@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 家族史·秀云 | [EN] A Brief Biography of Grandma
+title: 家族史·秀云 | (EN) A Brief Biography of Grandma
 date: 2016-11-14 02:40:26
 categories: Writings English
 tags: emotion beijing family

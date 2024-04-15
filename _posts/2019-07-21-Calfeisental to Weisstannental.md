@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Calfeisental to Weisstannental
+title: (EN) Calfeisental to Weisstannental
 date: 2019-07-21
 categories: Trips Writings English
 tags: Switzerland
