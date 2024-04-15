@@ -4,7 +4,7 @@ title: 家族史·秀云 | [EN] A Brief Biography of Grandma
 date: 2016-11-14 02:40:26
 categories: Writings English
 tags: emotion beijing family
-excerpt: 奶奶的一生其实也很简单，不太平的时候都是在13岁前。
+excerpt: 奶奶的一生其实也很简单，不太平的时候都是在13岁前。| My grandma's whole life is simple, mostly undisturbed after the age of thirteen.
 ---
 <center><i>
 <a href="#En">Jump to the English Version</a>
