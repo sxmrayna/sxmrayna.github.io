@@ -3,7 +3,7 @@ layout: post
 title: (EN) 'A Taxi Driver'
 date: 2024-10-18
 categories: Critiques English
-tags: SouthKorea China history
+tags: SouthKorea China history movie
 excerpt: I can only rely on these Korean movies to imagine how similar events have unfolded in my country’s history, how sad!
 ---
 ![](https://m.media-amazon.com/images/M/MV5BNTczN2QxM2MtMjBkYi00ZDk4LWI3MGYtMzcyYTAxM2JmMzJiXkEyXkFqcGc@._V1_.jpg)
