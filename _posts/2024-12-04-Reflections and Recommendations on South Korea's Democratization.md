@@ -4,13 +4,13 @@ title: Reflections and Recommendations on South Korea's Democratization
 date: 2024-12-04
 categories: Writings English
 tags: SouthKorea China politics history movie book
-excerpt: 
+excerpt: People feel an enduring sense of hope for the future, rather than helpless in front of dictatorship and politically depressed.
 ---
 In the past one and half months, I've delved into South Korea's democratization history through movies and books (some recommendations are listed below), and made me feel reflective on democratization in East Asia. Coincidentally, [South Korean President Yoon Suk-yeol declared martial law late last night](https://www.bbc.com/news/articles/c0lgw1pw5zpo), and ultimately the National Assembly voting to lift the martial law. 
 
 After reading the details about this news, I was touched that Seoul citizens gathered in front of the National Assembly and fighted against the military. The struggles of the past democratic movements came at an irreversible and tragic cost, making the fight to protect democracy more precious. Democracy and constitutional rule of law have become so deeply ingrained in the collective consciousness of ordinary South Koreans that individual ambitions can no longer revert the system back to dictatorship. 
 
-I also know that this political system isn't as perfect as communism sounds (like what we Chinese were taught in class), and we have seen its flaws by many examples as well, but its principles enable it to correct. Even when the people occasionally elect a less-than-ideal leader, democratic processes make it possible to correct the misstep within a few years. Therefore, people feel an enduring sense of hope for the future, rather than helpless.  
+I also know that this political system isn't as perfect as communism sounds (like what we Chinese were taught in class), and we have seen its flaws by many examples as well, but its principles enable it to correct. Even when the people occasionally elect a less-than-ideal leader, democratic processes make it possible to correct the misstep within a few years. Therefore, people feel an enduring sense of hope for the future, rather than helpless in front of dictatorship and politically depressed.
 
 In contrast, PRC is not short of (failed) social movement attempts, but most of time the internal and external pressures are in short. Many people do want a democratic society (as socialism feels like an illusion), but the current (economic) situation is just tolerable to avoid sacrifice. 
 
