@@ -29,3 +29,28 @@ excerpt: 他的一生，将不会为人所知晓，他留在人间的片段支�
 误入[金无怠](https://zh.wikipedia.org/wiki/%E9%87%91%E6%97%A0%E6%80%A0)这个rabbit hole感觉很像《[风筝](https://movie.douban.com/subject/25752323/)》的结局 但相比几年前大年三十看送审版觉得唏嘘悲惨的感受 现在会觉得这一生活成值得书写或拍成电影的样子 波折或凄惨下场倒也不可悲 毕竟人到最后都是一捧土 也想起《[大状王](https://www.westk.hk/tc/theimpossibletrial-houseprogramme)》里《[撒一场白米](https://www.bilibili.com/video/BV1873FzcEfU/?share_source=copy_web&vd_source=3c5f296717ca619f642e5e96594af724)》这首歌的意境
 
 对了 看中文书也重新用回kindle了 只不过现在是美区账号 中区停止服务时本想着三年也来得及读完买的书 转眼时间竟如此匆匆 又有荒废了的感觉 我还是无法相信浮夸的赞赏 总觉得言语笨拙是种不经意的可爱
+
+---
+### Fragments of Memory from the Movement
+
+> 研究工作中最困难的地方是工作难度会随着年代愈来愈久远而愈来愈大，如果现时不做相关研究，六四天安门事件很可能像文化大革命、反右派运动、土改运动、镇压反革命运动等事件一样没有留下加害者和受害者的历史纪录。 —— [吴仁华](https://x.com/wurenhua)
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/kZaE6jAwOM4?si=U7z38vXtn98KgI1G" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/T2BXcf3DcQc?si=nWXWGt6vsxkWl6dR&amp;start=119" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+> A hundred tanks along the square  
+One man stands and stops them there  
+Some day soon, the tide will turn, and I'll be free  
+I'll be free, I'll be free, I'll come home to my country  
+Some day soon the tide will turn and I'll be free  
+—— The Hooters - 500 Miles
+
+> 他（邓小平）强调了中国推行经济自由化而不进行政治改革的必要性。与此同时，他为爱国主义教育活动奠定了基础，并强调稳定的重要性。  
+这些政策带来了快速的经济增长，让数百万人摆脱了贫困，使现在的可支配收入比1989年的水平高出近20倍。但它们也造就了如今困扰中国的许多弊端，包括巨大的贫富差距、愈演愈烈的民族主义、道德危机以及安全机构的优势地位。
+
+> 这些都是北京顶尖大学的孩子，如果愿意，他们完全有能力绕开防火长城。不过就算他们在绕开防火长城，他们明显也不会去查找与1989年相关的信息。虽然互联网明显对打破政府对信息的垄断具有重大作用，但是如果人们不想了解与政治和过去相关的信息，那么连审查的必要都没有了。
+
+> 那个北京的春天，是充满令人陶醉的希望与可能性的七个星期，似乎有那么一个瞬间，政府看上去可能会接受中国公民的改革呼吁。当时，记者还能自由报道他们在街上的所见所闻，然后所有可能性突然消失。这让随之而来的残暴镇压更具有毁灭性。
+
+<p align="right"> —— <a href="https://cn.nytimes.com/china/20140604/c04limqa">前美国驻华记者著书谈六四改变中国历史</a></p>
