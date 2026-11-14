@@ -1,0 +1,10 @@
+<figure class="post-video">
+  <iframe width="560" height="315"
+    src="https://www.youtube.com/embed/{{ include.video }}?playsinline=1{% if include.start %}&amp;start={{ include.start }}{% endif %}"
+    title="{{ include.title | escape }}"
+    loading="lazy" referrerpolicy="strict-origin-when-cross-origin"
+    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+  <figcaption>
+    <a href="https://www.youtube.com/watch?v={{ include.video }}{% if include.start %}&amp;t={{ include.start }}s{% endif %}" target="_blank" rel="noopener">Watch {{ include.title | escape }} on YouTube{% if include.time %} from {{ include.time }}{% endif %} {% include new-tab-arrow.html %}</a>
+  </figcaption>
+</figure>

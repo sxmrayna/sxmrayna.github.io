@@ -1,0 +1,27 @@
+.song-wordmark {
+  display: inline-flex;
+  align-items: center;
+  gap: .24em;
+  color: var(--ink);
+  font: italic 600 clamp(1.23rem, 2vw, 1.52rem)/1.2 Georgia, serif;
+  white-space: nowrap;
+}
+.song-first {
+  display: inline-grid;
+  justify-items: end;
+  overflow: hidden;
+  padding: 3px 2px;
+  letter-spacing: -.065em;
+}
+.song-first > span { grid-area: 1 / 1; transition: opacity .27s ease, transform .37s cubic-bezier(.19,1,.22,1); }
+.song-name { opacity: 0; transform: translate(-11px, 110%); }
+.song-signature { width: 4.1em; height: 2.08em; overflow: visible; transition: transform .37s cubic-bezier(.19,1,.22,1); }
+.song-letters { stroke: var(--plum); stroke-width: 3.3; stroke-linecap: round; stroke-linejoin: round; }
+.song-flourish { stroke: #65806b; stroke-width: 1.5; stroke-linecap: round; }
+a:is(:hover,:focus-visible) > .song-wordmark .song-life { opacity: 0; transform: translate(4px, -105%); }
+a:is(:hover,:focus-visible) > .song-wordmark .song-name { opacity: 1; transform: none; }
+a:is(:hover,:focus-visible) > .song-wordmark .song-signature { transform: translateX(-3px) rotate(-4deg); }
+@media (prefers-reduced-motion: reduce) {
+  .song-first > span, .song-signature { transition: none; }
+  a:is(:hover,:focus-visible) > .song-wordmark .song-signature { transform: none; }
+}

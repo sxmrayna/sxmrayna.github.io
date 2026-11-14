@@ -1,0 +1,70 @@
+<div class="project-wheel {{ include.variant }}" data-project-wheel>
+  {% if include.title %}<h2 class="project-wheel-heading" id="{{ include.heading_id }}">{{ include.title | escape }}</h2>{% endif %}
+  <div class="project-wheel-stage" data-wheel-stage hidden>
+    <div class="project-wheel-dial">
+      {% if include.title %}
+      <svg class="project-wheel-ring-title" viewBox="0 0 420 420" aria-hidden="true" focusable="false">
+        <defs><path id="{{ include.id }}-title-arc" d="M 20 210 A 190 190 0 0 1 400 210" /></defs>
+        <text><textPath href="#{{ include.id }}-title-arc" startOffset="50%" text-anchor="middle">{{ include.title | escape }}</textPath></text>
+      </svg>
+      {% endif %}
+      <span class="project-wheel-pointer" aria-hidden="true"></span>
+      <div class="project-wheel-rotor-window">
+        <div class="project-wheel-rotor" role="tablist" aria-label="{{ include.label | escape }}">
+          {% for project in include.projects %}
+          <button class="project-wheel-sector" type="button" role="tab"
+                  id="{{ include.id }}-tab-{{ forloop.index }}" aria-controls="{{ include.id }}-panel-{{ forloop.index }}"
+                  aria-label="{{ project.title | escape }}" title="{{ project.title | escape }}">
+            <i class="project-wheel-rim" aria-hidden="true"></i>
+            <span aria-hidden="true">{% if forloop.index < 10 %}0{% endif %}{{ forloop.index }}</span>
+          </button>
+          {% endfor %}
+        </div>
+      </div>
+      <span class="project-wheel-hub" aria-hidden="true">✳</span>
+      <span class="project-wheel-stars" aria-hidden="true"><i></i><i></i><i></i></span>
+      <span class="project-wheel-stars project-wheel-sparkles" data-wheel-sparkles aria-hidden="true"><i></i><i></i><i></i></span>
+    </div>
+  </div>
+
+  <div class="project-wheel-info">
+    {% if include.intro %}<p class="project-wheel-intro">{{ include.intro | escape }}</p>{% endif %}
+    <div class="project-wheel-panels">
+      {% for project in include.projects %}
+      <article class="project-wheel-panel" id="{{ include.id }}-panel-{{ forloop.index }}" data-wheel-panel>
+        {% if project.image %}
+        {% assign cover = '/assets/portfolio/' | append: project.image %}
+        <img class="project-wheel-cover" src="{{ cover | relative_url }}" alt="" loading="lazy" decoding="async">
+        {% endif %}
+        {% if project.context %}<p class="eyebrow">{{ project.context | escape }}</p>{% endif %}
+        <h3>{{ project.title | escape }}</h3>
+        {% if project.summary %}<p class="project-wheel-summary">{{ project.summary | escape }}</p>{% endif %}
+        {% if project.url %}
+        <a class="project-wheel-link" href="{{ project.url | relative_url }}"{% if project.new_tab %} target="_blank" rel="noopener"{% endif %}>{{ project.action | default: "View project" | escape }}{% if project.new_tab %} {% include new-tab-arrow.html %}{% endif %}</a>
+        {% endif %}
+      </article>
+      {% endfor %}
+    </div>
+
+    <div class="project-wheel-controls" role="group" aria-label="Browse {{ include.label | escape }}" data-wheel-controls hidden>
+      <button type="button" data-wheel-previous><span aria-hidden="true">←</span> Previous</button>
+      <span class="project-wheel-count" data-wheel-count aria-hidden="true"></span>
+      <button type="button" data-wheel-next>Next <span aria-hidden="true">→</span></button>
+    </div>
+    <p class="project-wheel-announcement" data-wheel-announcement aria-live="polite" aria-atomic="true"></p>
+  </div>
+
+  <details class="project-wheel-picker" data-wheel-picker hidden>
+    <summary>Choose a project</summary>
+    <ol aria-label="{{ include.label | escape }} by name">
+      {% for project in include.projects %}
+      <li>
+        <button type="button" data-wheel-pick aria-controls="{{ include.id }}-panel-{{ forloop.index }}">
+          <span class="project-wheel-pick-number" aria-hidden="true">{% if forloop.index < 10 %}0{% endif %}{{ forloop.index }}</span>
+          <span>{{ project.title | escape }}</span>
+        </button>
+      </li>
+      {% endfor %}
+    </ol>
+  </details>
+</div>

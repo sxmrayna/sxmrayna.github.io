@@ -1,0 +1,68 @@
+---
+layout: default
+title: River of Memories
+description: Essays and field notes on travel, culture and everyday life by Xinmeng Song.
+body_class: journal-page
+---
+
+<div class="shell journal">
+  <header class="journal-heading">
+    {% include botanical-sprig.html class="sprig-overhead" %}
+    {% include botanical-sprig.html class="sprig-left" %}
+    {% include botanical-sprig.html class="sprig-right" %}
+    {% include glowing-reader.html class="journal-avatar" %}
+    <h1>{% include river-title.html %}</h1>
+    <p class="journal-deck">Essays and field notes on travel, culture and everyday life.</p>
+    <nav class="archive-nav" aria-label="Browse writing">
+      <a href="{{ '/years/' | relative_url }}">By year</a>
+      <a href="{{ '/categories/' | relative_url }}">Categories</a>
+      <a href="{{ '/tags/' | relative_url }}">Tags</a>
+      <a href="{{ '/feed.xml' | relative_url }}">RSS</a>
+    </nav>
+  </header>
+
+  <div class="journal-list" id="journal-entries">
+    <svg class="journal-page-current" viewBox="0 0 255 18" aria-hidden="true" focusable="false" fill="none">
+      <path d="M2 12c39 2 55-8 89-8 42 0 52 11 82 10 28-1 43-8 80-9" />
+      <path d="M85 10c41 0 48 8 83 6 30-2 45-8 74-8" opacity=".45" />
+      <path class="journal-flow-glint" pathLength="1" d="M2 12c39 2 55-8 89-8 42 0 52 11 82 10 28-1 43-8 80-9" />
+    </svg>
+    {% assign posts = paginator.posts | default: site.posts %}
+    {% for post in posts %}
+    <article class="journal-item">
+      <time datetime="{{ post.date | date: '%Y-%m-%d' }}">{{ post.date | date: '%b %d, %Y' }}</time>
+      <div>
+        <h2><a href="{{ post.url | relative_url }}">{{ post.title | escape }}</a></h2>
+        {% if post.categories.size > 0 %}
+        <p>{{ post.categories | join: ' · ' | escape }}</p>
+        {% endif %}
+      </div>
+    </article>
+    {% endfor %}
+  </div>
+
+  {% if paginator.total_pages > 1 %}
+  <nav class="pagination" aria-label="Writing pages">
+    {% if paginator.previous_page %}
+    <a class="pagination-prev" rel="prev" href="{{ paginator.previous_page_path | relative_url }}#journal-entries">Newer</a>
+    {% endif %}
+    <ol class="pagination-pages">
+      {% for number in (1..paginator.total_pages) %}
+      <li>
+        {% if number == paginator.page %}
+        <span aria-current="page" aria-label="Page {{ number }}">{{ number }}</span>
+        {% elsif number == 1 %}
+        <a href="{{ '/blog/' | relative_url }}#journal-entries" aria-label="Page 1">1</a>
+        {% else %}
+        <a href="{{ site.paginate_path | replace: ':num', number | relative_url }}#journal-entries" aria-label="Page {{ number }}">{{ number }}</a>
+        {% endif %}
+      </li>
+      {% endfor %}
+    </ol>
+    {% if paginator.next_page %}
+    <a class="pagination-next" rel="next" href="{{ paginator.next_page_path | relative_url }}#journal-entries">Older</a>
+    {% endif %}
+  </nav>
+  {% endif %}
+  {% include closing-flourish.html %}
+</div>

@@ -1,22 +1,20 @@
-title: River of Memories
-author: Xinmeng
+title: Life in Song
+author: Xinmeng Song
 avatar: /logo.png
 email: sxmrayna@gmail.com
-location: Lucerne, Switzerland
-description: Even water has memory that no matter where it ends up, it'll always remember where it's been. 
+location: Zurich, Switzerland
+description: AI product design and development, personal projects, and writing by Xinmeng Song.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://sxmrayna.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 
 
 # Build settings
 theme: minima
-gems:
-  - jekyll-paginate-v2
 plugins:
   - jekyll-feed
   - jekyll-sitemap
-  - jekyll-paginate-v2
-  #- jekyll-seo-tag
+  - jekyll-paginate
+  - jekyll-seo-tag
 
 # Jekyll SEO Tag (Optional)
 # =========================
@@ -31,16 +29,11 @@ social:
     #- https://www.facebook.com/ngzhio
     #- https://github.com/ngzhio
 lang: en
+shelves_url: "https://mildwildwind.notion.site/Shelves-f881f08db0844389a2ca45ff5d2e8d11?pvs=4"
+places_url: "https://mildwildwind.notion.site/e0280d9d384940a6a08dbbdafc30a4e2?v=b73b4a7cd61d4422901a69120b88ef20"
 
-pagination:
-  enabled: true
-  per_page: 10
-  permalink: '/page/:num/'
-  title: ' - page :num'
-  limit: 0
-  sort_field: 'date'
-  sort_reverse: true
-
+paginate: 10
+paginate_path: /blog/page/:num/
 
 exclude:
    - .sass-cache/

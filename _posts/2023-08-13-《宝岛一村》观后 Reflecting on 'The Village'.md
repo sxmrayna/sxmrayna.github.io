@@ -51,7 +51,7 @@ excerpt: 流下泪的那一刻，早已不必如此苛刻。因为真实的群�
 <span id="En">English Version below</span>
 </center>
 <br>
-<center><p>Check out <a href="https://www.pwshop.com/en/show/the-village-%EF%BC%882008%EF%BC%89/" target="_blank">Introduction of The Village by Stan Lai</a>.</p></center>
+<center><p>Check out <a href="https://www.pwshop.com/en/show/the-village-%EF%BC%882008%EF%BC%89/">Introduction of The Village by Stan Lai</a>.</p></center>
 
 Tears rendered critique unnecessary, as true collective memory deeply moved me.
 

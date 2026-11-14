@@ -1,0 +1,16 @@
+<a class="skip-link" href="#main-content">Skip to content</a>
+<header class="masthead">
+  <div class="shell masthead-inner">
+    <a class="wordmark" href="{{ '/' | relative_url }}" aria-label="Life in Song by Xinmeng Song, home">
+      {% include song-wordmark.html %}
+    </a>
+    <nav aria-label="Main navigation">
+      <ul class="nav-links">
+        <li><a href="{{ '/#experience' | relative_url }}">Experience</a></li>
+        <li><a href="{{ '/#work' | relative_url }}"{% if page.url contains '/projects/' %} aria-current="true"{% endif %}>Projects</a></li>
+        <li><a href="{{ '/blog/' | relative_url }}" target="_blank" rel="noopener"{% if page.url == '/blog/' %} aria-current="page"{% elsif page.url contains '/blog/' or page.layout == 'post' %} aria-current="true"{% endif %}>Blog {% include new-tab-arrow.html %}</a></li>
+        <li><a href="{{ site.shelves_url | escape }}" target="_blank" rel="noopener">Shelves {% include new-tab-arrow.html %}</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>

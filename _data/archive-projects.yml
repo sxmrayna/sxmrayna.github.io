@@ -1,0 +1,29 @@
+- title: Alzy
+  image: project-covers/alzy.webp
+  context: Human-centered design · 2019
+  url: /portfolio/Alzy.html
+  summary: We interviewed caregivers and tested a prototype to help tailor daily activities for people living with Alzheimer’s disease.
+- title: Coachsurfing
+  image: project-covers/coachsurfing.webp
+  context: Product research and prototyping · 2020
+  url: /portfolio/Coachsurfing.html
+  summary: We researched how people find personal trainers and designed an interactive fitness app prototype around what we learned.
+- title: Deep Talk with AI
+  image: project-covers/deep-talk.webp
+  context: Master’s research · 2020–2021
+  url: /portfolio/Chatbot.html
+  summary: I ran an experiment to see how the depth of conversation affects engagement with a chatbot and how people evaluate it.
+- title: Customer feedback management
+  image: project-covers/customer-feedback.webp
+  context: Interface design · 2021
+  url: https://tmgrmm.github.io/interface-master-project/to-do.html
+  action: Open demo
+  new_tab: true
+  summary: We prototyped an interface for managing customer reviews from multiple platforms in one place.
+- title: Learn to Shape the World
+  image: project-covers/learn-to-shape.webp
+  context: University of Zurich · Video
+  url: https://www.youtube.com/watch?v=hEhie1bV9Is
+  action: Watch on YouTube
+  new_tab: true
+  summary: A short film for the University of Zurich about learning through innovation.

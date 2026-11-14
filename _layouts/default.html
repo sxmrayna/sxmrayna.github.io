@@ -1,32 +1,49 @@
-<!DOCTYPE html>
-<html lang="{{ page.lang | default: site.lang | default: "en" }}">
-
-  <head>
-    {% include head.html %}
-  </head>
-
-  <body>
-    <div class="site-container">
-      <header class="site-header">
-        {% include header.html %}
-      </header>
-      
-      <div class="site-body wrapper">
-        <aside class="site-sidebar" id="site-sidebar">
-          {% if page.toc %}
-            {% include sidebar-toc.html %}
-          {% else %}
-            {% include sidebar.html %}
-          {% endif %}
-        </aside>
-        <main class="site-main" id="site-main" aria-label="Content" tabindex="1">
-          {{ content }}
-          <footer class="site-footer">
-            {% include footer.html %}
-          </footer>
-        </main>
-      </div>
-    </div>
-  </body>
-
+<!doctype html>
+<html lang="{{ page.lang | default: site.lang | default: 'en' }}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  {% if page.body_class == "portfolio-home" %}
+  <title>{{ site.title | escape }}</title>
+  {% seo title=false %}
+  {% else %}
+  {% seo %}
+  {% endif %}
+  {% feed_meta %}
+  <link rel="icon" type="image/png" sizes="64x64" href="{{ '/assets/portfolio/favicon.png' | relative_url }}">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Baskervville:ital@0;1&amp;family=Cormorant+Garamond:ital,wght@0,400..700;1,400..700&amp;family=Crimson+Pro:ital@1&amp;family=DM+Sans:wght@400..700&amp;family=IBM+Plex+Mono:wght@400;500;600&amp;family=Instrument+Serif:ital@0;1&amp;family=Pinyon+Script&amp;family=Playfair+Display:wght@400..700&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ '/assets/portfolio/pointer.css' | relative_url }}">
+  <script src="{{ '/assets/portfolio/pointer-glint.js' | relative_url }}" defer></script>
+  <link rel="stylesheet" href="{{ '/assets/portfolio/site.css' | relative_url }}">
+  <link rel="stylesheet" href="{{ '/assets/portfolio/song-wordmark.css' | relative_url }}">
+  <link rel="stylesheet" href="{{ '/assets/portfolio/moonlit-nav.css' | relative_url }}">
+  {% if page.body_class == "journal-page" or page.layout == "post" or page.url == "/years/" or page.url == "/categories/" or page.url == "/tags/" %}
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600&amp;display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=IM+Fell+English:ital@1&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ '/assets/portfolio/journal-type.css' | relative_url }}">
+  {% endif %}
+  {% if page.body_class == "portfolio-home" or page.body_class == "journal-page" %}
+  <link rel="stylesheet" href="{{ '/assets/portfolio/book-transition.css' | relative_url }}">
+  {% endif %}
+  {% if page.body_class == "journal-page" %}
+  <script src="{{ '/assets/portfolio/journal-pagination.js' | relative_url }}" defer></script>
+  {% endif %}
+  {% if page.body_class == "portfolio-home" %}
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&amp;family=Dancing+Script:wght@700&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ '/assets/portfolio/project-wheel.css' | relative_url }}">
+  <script src="{{ '/assets/portfolio/home.js' | relative_url }}" defer></script>
+  <script src="{{ '/assets/portfolio/project-wheel.js' | relative_url }}" defer></script>
+  {% endif %}
+  {% if page.layout == "project" %}<link rel="stylesheet" href="{{ '/assets/portfolio/case-diagrams.css' | relative_url }}">{% endif %}
+  {% if page.math %}{% include mathjax.html %}{% endif %}
+</head>
+<body id="page-top" class="{{ page.body_class | default: layout.body_class }}">
+  {% include portfolio-nav.html %}
+  <main id="main-content" tabindex="-1">
+    {{ content }}
+  </main>
+  {% include back-to-top.html %}
+</body>
 </html>

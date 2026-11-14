@@ -1,0 +1,53 @@
+---
+layout: default
+---
+
+<div class="shell project-page"{% if page.illustration %} data-case="{{ page.illustration | escape }}"{% endif %}>
+  <header class="project-heading">
+    <a class="text-link back-link" href="{{ '/#work' | relative_url }}">Back to AI projects</a>
+    <p class="eyebrow">{{ page.context | escape }}</p>
+    <h1>{{ page.title | escape }}</h1>
+    <p class="project-lead">{{ page.description | escape }}</p>
+  </header>
+  {% if page.illustration %}
+  {% assign illustration = '/assets/portfolio/cases/' | append: page.illustration | append: '.webp' %}
+  <img class="case-illustration" src="{{ illustration | relative_url }}" alt="" width="1000" height="667" decoding="async">
+  {% endif %}
+  <div class="project-body post-content">
+    {{ content }}
+  </div>
+
+  {% assign published_projects = site.data.projects | where_exp: 'project', 'project.url' %}
+  {% for project in published_projects %}
+    {% if project.url == page.url %}
+      {% unless forloop.first %}
+        {% assign previous_index = forloop.index0 | minus: 1 %}
+        {% assign previous_project = published_projects[previous_index] %}
+      {% endunless %}
+      {% unless forloop.last %}
+        {% assign next_index = forloop.index0 | plus: 1 %}
+        {% assign next_project = published_projects[next_index] %}
+      {% endunless %}
+      {% break %}
+    {% endif %}
+  {% endfor %}
+  {% if previous_project or next_project %}
+  <nav class="project-pagination" aria-label="Adjacent AI projects">
+    {% if previous_project %}
+    <a class="project-page-link project-page-previous" href="{{ previous_project.url | relative_url }}" rel="prev">
+      <span class="project-page-direction">Previous project</span>
+      <span class="project-page-title">{{ previous_project.title | escape }}</span>
+    </a>
+    {% endif %}
+    {% if next_project %}
+    <a class="project-page-link project-page-next" href="{{ next_project.url | relative_url }}" rel="next">
+      <span class="project-page-direction">Next project</span>
+      <span class="project-page-title">{{ next_project.title | escape }}</span>
+    </a>
+    {% endif %}
+  </nav>
+  {% endif %}
+</div>
+{% if page.illustration %}
+<script src="{{ '/assets/portfolio/case-reveal.js' | relative_url }}" defer></script>
+{% endif %}

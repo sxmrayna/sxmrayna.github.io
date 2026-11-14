@@ -1,0 +1,98 @@
+.masthead, .archive-header, .archive-detail-header {
+  position: relative;
+  background: linear-gradient(107deg, #faf8ff 7%, #f4eef9 62%, #edf2e9 100%);
+  border-bottom: 1px solid #ded4e7;
+}
+.masthead-inner, .archive-nav[aria-label="Main navigation"] { position: relative; }
+.masthead .wordmark, .archive-nav .archive-brand { border-bottom: 0; }
+.masthead .nav-links, .archive-nav .archive-nav-links {
+  gap: .2em clamp(.3rem, 1.4vw, 1.45rem);
+}
+.masthead .nav-links a, .archive-nav .archive-nav-links a {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: .22em;
+  min-height: 40px;
+  padding: .37em .55em;
+  color: #463853;
+  font: italic 650 clamp(1.06rem, 1.33vw, 1.27rem)/1.02 "Cormorant Garamond", Georgia, serif;
+  text-decoration: none;
+}
+.masthead .nav-links a::after, .archive-nav .archive-nav-links a::after {
+  position: absolute;
+  inset: auto .38em .17em;
+  height: .32em;
+  border-bottom: 1px solid #9479a4;
+  border-radius: 0 0 55% 45%;
+  background: transparent;
+  transform: rotate(-5deg) scaleX(.2);
+  transform-origin: center;
+  opacity: 0;
+  transition: transform .25s ease, opacity .2s ease;
+  content: "";
+}
+.masthead .nav-links a:is(:hover, :focus-visible, [aria-current])::after,
+.archive-nav .archive-nav-links a:is(:hover, :focus-visible, [aria-current])::after {
+  transform: rotate(-5deg) scaleX(1);
+  opacity: 1;
+}
+.masthead .nav-links a:hover, .archive-nav .archive-nav-links a:hover { color: #604375; text-decoration: none; }
+
+:is(.journal-page, .article-page) {
+  --back-to-top-width: 980px;
+  --back-to-top-border: #a4b99b;
+  --back-to-top-paper: #edf5e8f5;
+  --back-to-top-ink: #4d6d49;
+  --back-to-top-shadow: #345a3529;
+  --back-to-top-hover: #dfeeda;
+}
+body:has(.project-page) { --back-to-top-width: 950px; }
+.portfolio-archive {
+  --back-to-top-width: var(--archive-shell);
+  --back-to-top-gutter: var(--archive-gutter);
+}
+.archive-detail {
+  --back-to-top-width: 58rem;
+  --back-to-top-gutter: var(--archive-gutter);
+}
+.back-to-top-button {
+  position: fixed;
+  inset-inline-end: max(var(--back-to-top-gutter, var(--gutter, 20px)), calc((100% - var(--back-to-top-width, var(--shell, 1180px))) / 2), env(safe-area-inset-right));
+  bottom: max(17px, env(safe-area-inset-bottom));
+  z-index: 6;
+  display: grid;
+  place-items: center;
+  width: 46px;
+  height: 46px;
+  border: 1px solid var(--back-to-top-border, #b2a2c7);
+  border-radius: 50% 49% 45% 48%;
+  background: var(--back-to-top-paper, #f3ecf9f5);
+  color: var(--back-to-top-ink, #645183);
+  box-shadow: 0 3px 16px var(--back-to-top-shadow, #3e235229);
+  text-decoration: none;
+  transition: transform .25s ease, background-color .25s ease;
+}
+.back-to-top-button svg { width: 25px; height: 25px; stroke: currentColor; stroke-width: 1.4; stroke-linecap: round; stroke-linejoin: round; }
+.back-to-top-button:hover { transform: translateY(-4px); background: var(--back-to-top-hover, #eae0f5); }
+@media (prefers-reduced-motion: no-preference) {
+  html:has(.back-to-top-button:active) { scroll-behavior: smooth; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .masthead .nav-links a::after, .archive-nav .archive-nav-links a::after, .back-to-top-button { transition: none; }
+  .back-to-top-button:hover { transform: none; }
+}
+
+.new-tab-arrow {
+  flex: none;
+  display: inline-block;
+  width: 1.12em;
+  height: 1.12em;
+  vertical-align: -.14em;
+  opacity: .84;
+  transition: translate .26s ease, opacity .26s ease;
+}
+a:is(:hover, :focus-visible) > .new-tab-arrow { translate: 2px -2px; opacity: 1; }
+@media (prefers-reduced-motion: reduce) {
+  .new-tab-arrow, a:is(:hover, :focus-visible) > .new-tab-arrow { transition: none; translate: none; }
+}

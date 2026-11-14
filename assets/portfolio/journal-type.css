@@ -1,0 +1,60 @@
+@font-face {
+  font-family: "Song Autumn Script";
+  src: url("./journal-qiuhong.woff2") format("woff2");
+  font-display: swap;
+  unicode-range: U+2E80-2FFF, U+3000-303F, U+3100-31BF, U+3400-4DBF, U+4E00-9FFF, U+F900-FAFF, U+FF00-FFEF, U+20000-323AF;
+}
+@font-face {
+  font-family: "Life in Song Kai";
+  src: url("./journal-kai.woff2") format("woff2");
+  font-display: swap;
+  unicode-range: U+2E80-2FFF, U+3000-303F, U+3100-31BF, U+3400-4DBF, U+4E00-9FFF, U+F900-FAFF, U+FF00-FFEF, U+20000-323AF;
+}
+
+.journal-page .journal-item h2,
+.article-page .post-title {
+  font-family: "Song Autumn Script", "Life in Song Kai", "IM Fell English", Georgia, serif;
+  font-style: italic;
+  font-weight: 400;
+  font-synthesis: none;
+}
+
+.journal-page .journal-item time,
+.article-page .post-meta time {
+  font: italic 500 1.17rem/1.2 "Instrument Serif", Georgia, serif;
+}
+
+.article-page .post-content {
+  font-family: "Life in Song Kai", var(--body), "Noto Serif SC", "Songti SC", serif;
+}
+.article-page .post-content :is(h2, h3, h4) {
+  font-family: "Life in Song Kai", var(--display), "Noto Serif SC", "Songti SC", serif;
+}
+
+.pagination a {
+  border-radius: 50% 44% 48% 45%;
+  transition: background-color .22s ease, color .22s ease, box-shadow .22s ease;
+}
+.pagination a:is(:hover, :focus-visible) {
+  background: #edf5e8;
+  color: #485e45;
+  box-shadow: inset 0 0 0 1px #8da9895c;
+}
+.pagination a:active { background: #d7e9d0; }
+.pagination :is(.pagination-prev, .pagination-next) {
+  padding-inline: .6em;
+  font: italic 600 1.2rem/1.2 "Crimson Pro", Georgia, serif;
+}
+.pagination-pages [aria-current] {
+  border-color: #61805c;
+  border-radius: 48% 50% 44% 48%;
+  background: #547451;
+  color: #fbfff8;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .pagination-pages [aria-current] { animation: journal-page-ink .34s ease-out both; }
+  @keyframes journal-page-ink {
+    from { background-color: #dcebd6; border-color: #a4b99b; color: #345633; }
+    to { background-color: #547451; border-color: #61805c; color: #fbfff8; }
+  }
+}

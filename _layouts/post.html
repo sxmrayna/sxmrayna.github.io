@@ -1,10 +1,13 @@
 ---
 layout: default
+body_class: article-page
 ---
 
+<div class="shell reading-shell">
 <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
 
   <header class="post-header">
+    <a class="text-link" href="{{ '/blog/' | relative_url }}">Back to River of Memories</a>
 
     <h1 class="post-title p-name" itemprop="name headline">{{ page.title | escape }}</h1>
     <p class="post-meta">
@@ -30,6 +33,13 @@ layout: default
 
   </header>
 
+  {% if page.toc %}
+  <details class="post-toc" open>
+    <summary>Contents</summary>
+    <nav aria-label="Table of contents">{% include toc.html html=content h_min=2 h_max=3 class="toc" %}</nav>
+  </details>
+  {% endif %}
+
   <div class="post-content e-content" itemprop="articleBody">
     {{ content }}
   </div>
@@ -37,8 +47,7 @@ layout: default
   <footer class="post-footer">
     {% if page.categories.size > 0 %}
       <div class="post-meta">
-        <i class="fas fa-folder"></i>
-        <ul class="post-taxonomies post-categories">
+        <ul class="post-taxonomies post-categories" aria-label="Categories">
           {% assign categories = page.categories | sort %}
           {% for category in categories %}
             <li class="post-category">
@@ -52,8 +61,7 @@ layout: default
 
     {% if page.tags.size > 0 %}
       <div class="post-meta">
-        <i class="fas fa-tags"></i>
-        <ul class="post-taxonomies post-tags">
+        <ul class="post-taxonomies post-tags" aria-label="Tags">
           {% assign tags = page.tags | sort %}
           {% for tag in tags %}
             <li class="post-tag">
@@ -65,22 +73,18 @@ layout: default
       </div>
     {% endif %}
 
-    <nav class="post-pagination" role="navigation">
-      {% if page.previous %}
-        <a class="post-previous" href="{{ page.previous.url | relative_url }}">
-          <h4 class="post-pagination-label">Prev</h4>
-          <span class="post-pagination-title">
-            <i class="fas fa-arrow-left"></i> {{ page.previous.title | markdownify | strip_html }}
-          </span>
+    <nav class="post-pagination" aria-label="Adjacent posts">
+      {% if page.next %}
+        <a class="post-previous" href="{{ page.next.url | relative_url }}" rel="prev">
+          <span class="post-pagination-label">Newer post</span>
+          <span class="post-pagination-title">{{ page.next.title | markdownify | strip_html }}</span>
         </a>
       {% endif %}
 
-      {% if page.next %}
-        <a class="post-next" href="{{ page.next.url | relative_url }}">
-          <h4 class="post-pagination-label">Next</h4>
-          <span class="post-pagination-title">
-            {{ page.next.title | markdownify | strip_html }} <i class="fas fa-arrow-right"></i>
-          </span>
+      {% if page.previous %}
+        <a class="post-next" href="{{ page.previous.url | relative_url }}" rel="next">
+          <span class="post-pagination-label">Older post</span>
+          <span class="post-pagination-title">{{ page.previous.title | markdownify | strip_html }}</span>
         </a>
       {% endif %}
     </nav>
@@ -91,3 +95,4 @@ layout: default
   {% endif %}
   
 </article>
+</div>

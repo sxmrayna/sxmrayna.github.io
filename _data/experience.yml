@@ -1,0 +1,96 @@
+- organization: Unlocking Eve
+  role: AI Product & Agent Development Intern
+  period: "2026"
+  location: Zurich, Switzerland
+  logo: unlocking-eve.png
+  url: https://www.unlockingeve.org/
+  description: Designed AI coaching agents for a leadership assessment, combining structured scoring, retrieval and guided conversations. Contributed to the product roadmap, model evaluation and pricing. Now developing AI assistant agents that help teams use shared knowledge and automate recurring workflows.
+- organization: Emerald Technology Ventures
+  role: AI Solutions Analyst & Engineer (Working Student)
+  period: "2026"
+  location: Zurich, Switzerland
+  logo: emerald.svg
+  url: https://emerald.vc/
+  description: Built and tested an AI-assisted workflow that turns unstructured investment spreadsheets into structured financial data. Developed checks that compare generated outputs with source files.
+- organization: AXA Switzerland
+  role: AI Solutions Analyst
+  period: "2026"
+  location: Zurich, Switzerland
+  logo: axa.svg
+  url: https://www.axa.ch/en/private-customers.html
+  description: For the IBM watsonx Agentic AI Challenge, led stakeholder discovery and helped build an AI prototype for market monitoring and broker visit briefings.
+- organization: Zurich Data Scientists
+  role: Data Scientist (Master’s thesis project)
+  period: "2026"
+  location: Zurich, Switzerland
+  logo: zds.png
+  url: https://www.zurich-data-scientists.ch/
+  description: Evaluated data sources and spatial analysis approaches to study where police records may underrepresent cycling accidents in the Canton of Zurich.
+- organization: Lucerne University of Applied Sciences and Arts
+  type: education
+  role: MSc in Applied Data Science and AI
+  period: "2025–2027"
+  location: Lucerne, Switzerland
+  logo: hslu.png
+  url: https://www.hslu.ch/en/lucerne-school-of-business/degree-programmes/master/applied-data-science-and-ai/
+  description: Coursework in machine learning, generative AI and data engineering. Course projects included multi-agent orchestration for retrieval-augmented generation and customer data analytics.
+- organization: Thoughtworks
+  role: Data & AI Business Analyst / Product Manager
+  period: "2022–2024"
+  location: Beijing, China
+  logo: thoughtworks.png
+  url: https://www.thoughtworks.com/
+  description: Delivered data and AI products for major clients across industries, including HSBC and Bank of China in banking, Novo Nordisk in healthcare, and Mercedes-Benz and Porsche in automotive.
+- organization: Asia Innovations Group
+  role: User Researcher
+  period: "2021–2022"
+  location: Beijing, China
+  logo: asia-innovations.png
+  url: https://www.linkedin.com/company/asiainnovationsgroup/
+  description: Used surveys, interviews and usability testing to identify user needs and inform product improvements for international audiences.
+- organization: Ipsos
+  role: User Research Assistant
+  period: "2021"
+  location: Beijing, China
+  logo: ipsos.png
+  url: https://www.ipsos.com/
+  description: Supported user research for telecommunications clients and translated findings into recommendations for improving their products.
+- organization: University of Zurich
+  type: education
+  role: MA in Business and Economics
+  period: "2018–2021"
+  location: Zurich, Switzerland
+  logo: uzh.png
+  url: https://www.uzh.ch/en.html
+  description: Majored in Business Administration and minored in People-Oriented Computing, with a focus on human–computer interaction (HCI). Researched how people engage in deep and shallow conversations with artificial agents.
+- organization: "re:spondelligent"
+  role: Product Management Working Student
+  period: "2021"
+  location: Zurich, Switzerland
+  logo: respondelligent.png
+  url: https://respondelligent.com/en/
+  description: Helped redesign a customer review management platform for hospitality businesses through interviews, prototyping and usability testing.
+- organization: Technical University of Munich
+  type: education
+  role: Exchange Semester in Management and Technology
+  period: "2020"
+  location: Munich, Germany
+  logo: tum.png
+  url: https://www.tum.de/en/
+  description: Studied marketing, strategy and innovation management. Developed a fitness app concept as a team project.
+- organization: EBS Universität für Wirtschaft und Recht
+  type: education
+  role: Master’s Preparatory Semester in Finance
+  period: "2018"
+  location: Oestrich-Winkel, Germany
+  logo: ebs.png
+  url: https://www.ebs.edu/en
+  description: Studied investments, corporate finance, economics and quantitative methods, alongside advanced business German.
+- organization: Beijing Foreign Studies University
+  type: education
+  role: BA in German Language and Literature
+  period: "2013–2017"
+  location: Beijing, China
+  logo: bfsu.png
+  url: https://en.bfsu.edu.cn/
+  description: Studied German language and literature and took a German language course at Heidelberg University.

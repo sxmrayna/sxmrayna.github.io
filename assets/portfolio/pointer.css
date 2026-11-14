@@ -1,0 +1,71 @@
+@media (hover: hover) and (pointer: fine), (any-hover: hover) and (any-pointer: fine) {
+  html {
+    --pointer-idle: url("./pointer.svg");
+    --pointer-action: url("./pointer-action.svg");
+    cursor: var(--pointer-idle) 3 2, default;
+  }
+  html:has(:is(.journal-page, .article-page)) {
+    --pointer-idle: url("./pointer-sage.svg");
+    --pointer-action: url("./pointer-action-sage.svg");
+  }
+  a, button:not(:disabled), summary, select, [role="button"], [role="tab"], input:is([type="button"], [type="submit"], [type="checkbox"], [type="radio"]) {
+    cursor: var(--pointer-action) 3 2, pointer !important;
+  }
+  .post-content { cursor: text; }
+  input:not([type]), input:is([type="text"], [type="email"], [type="search"], [type="password"]), textarea, [contenteditable="true"] { cursor: text; }
+}
+
+.pointer-glint {
+  position: fixed;
+  z-index: 60;
+  width: 0;
+  height: 0;
+  pointer-events: none;
+}
+
+.pointer-glint i {
+  --glint-x: -10px;
+  --glint-y: -11px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 7px;
+  height: 7px;
+  background: var(--pointer-glint-primary, #9977b8);
+  clip-path: polygon(50% 0, 61% 39%, 100% 50%, 61% 61%, 50% 100%, 39% 61%, 0 50%, 39% 39%);
+  animation: pointer-glint-rise 360ms ease-out both;
+}
+
+.pointer-glint i:nth-child(2) {
+  --glint-x: 14px;
+  --glint-y: -6px;
+  width: 5px;
+  height: 5px;
+  background: var(--pointer-glint-secondary, #789467);
+  animation-delay: 38ms;
+}
+
+.pointer-glint i:nth-child(3) {
+  --glint-x: -7px;
+  --glint-y: 13px;
+  width: 4px;
+  height: 4px;
+  background: var(--pointer-glint-tertiary, #b79ccc);
+  animation-delay: 67ms;
+}
+
+@keyframes pointer-glint-rise {
+  0% { opacity: 0; transform: translate(-50%, -50%) scale(.35); }
+  28% { opacity: .9; }
+  100% { opacity: 0; transform: translate(-50%, -50%) translate(var(--glint-x), var(--glint-y)) rotate(14deg) scale(.45); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pointer-glint { display: none; }
+}
+
+:is(.journal-page, .article-page) {
+  --pointer-glint-primary: #648459;
+  --pointer-glint-secondary: #9ab085;
+  --pointer-glint-tertiary: #bfd4a5;
+}

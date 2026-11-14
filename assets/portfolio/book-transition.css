@@ -1,0 +1,52 @@
+.writing-title-link { text-decoration: none; }
+.writing-title-link:hover .river-title-name { color: var(--plum); }
+.writing-title-link .river-title-name { transition: color .2s ease; }
+
+@media (prefers-reduced-motion: no-preference) {
+  @view-transition { navigation: auto; }
+
+  .writing-feature, .journal-heading { view-transition-name: journal-cover; }
+  ::view-transition-group(root) { animation-duration: .42s; }
+  ::view-transition-group(journal-cover) { animation-duration: .61s; }
+  ::view-transition-image-pair(journal-cover) { perspective: 950px; overflow: visible; }
+  ::view-transition-old(journal-cover) {
+    transform-origin: left center;
+    animation: journal-page-lift .55s cubic-bezier(.34,.07,.3,1) both;
+  }
+  ::view-transition-new(journal-cover) {
+    transform-origin: left center;
+    animation: journal-page-open .59s .02s cubic-bezier(.2,.65,.28,1) both;
+  }
+
+  html:active-view-transition-type(journal-pagination) .journal-heading { view-transition-name: none; }
+  html:active-view-transition-type(journal-pagination)::view-transition-group(root) { animation-duration: .64s; }
+  html:active-view-transition-type(journal-pagination)::view-transition-image-pair(root) { perspective: 1300px; }
+  html:active-view-transition-type(journal-pagination)::view-transition-old(root) {
+    mix-blend-mode: normal;
+    transform-origin: top center;
+    animation: journal-sheet-lift .55s cubic-bezier(.38,.04,.32,1) both;
+  }
+  html:active-view-transition-type(journal-pagination)::view-transition-new(root) {
+    mix-blend-mode: normal;
+    transform-origin: bottom center;
+    animation: journal-sheet-open .6s .04s cubic-bezier(.2,.73,.26,1) both;
+  }
+}
+@keyframes journal-page-lift {
+  from { opacity: 1; transform: rotateY(0); }
+  to { opacity: 0; transform: rotateY(-63deg); }
+}
+@keyframes journal-page-open {
+  from { opacity: .35; transform: rotateY(51deg); }
+  to { opacity: 1; transform: rotateY(0); }
+}
+
+@keyframes journal-sheet-lift {
+  0% { opacity: 1; transform: rotateX(0); }
+  52% { opacity: .58; }
+  100% { opacity: 0; transform: translateY(-14%) rotateX(36deg); }
+}
+@keyframes journal-sheet-open {
+  0% { opacity: .06; transform: translateY(14%) rotateX(-20deg); }
+  100% { opacity: 1; transform: none; }
+}

@@ -35,9 +35,9 @@ excerpt: 他的一生，将不会为人所知晓，他留在人间的片段支�
 
 > 研究工作中最困难的地方是工作难度会随着年代愈来愈久远而愈来愈大，如果现时不做相关研究，六四天安门事件很可能像文化大革命、反右派运动、土改运动、镇压反革命运动等事件一样没有留下加害者和受害者的历史纪录。 —— [吴仁华](https://x.com/wurenhua)
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/kZaE6jAwOM4?si=U7z38vXtn98KgI1G" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+{% include youtube-video.html video="kZaE6jAwOM4" title="達明一派《回憶有罪》" %}
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/T2BXcf3DcQc?si=nWXWGt6vsxkWl6dR&amp;start=119" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+{% include youtube-video.html video="T2BXcf3DcQc" title="The Hooters – 500 Miles" start=119 time="1:59" %}
 
 > A hundred tanks along the square  
 One man stands and stops them there  

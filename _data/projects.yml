@@ -1,0 +1,21 @@
+- title: AI-powered personal knowledge base
+  image: cases/knowledge.webp
+  context: Personal project
+  url: /projects/personal-knowledge-base/
+  summary: A way to bring my notes into an AI conversation and save useful ideas for later.
+- title: RAG-based AI coaching app
+  image: cases/coaching.webp
+  context: Unlocking Eve
+  url: /projects/ai-coaching/
+  summary: An on-demand coach that helps leaders turn assessment insights into practical next steps.
+- title: AI personal assistant
+  image: cases/assistant.webp
+  context: Team project · In development
+  url: /projects/ai-personal-assistant/
+  summary: A work assistant designed to help a team prepare, coordinate and follow up using shared knowledge.
+- title: AI-powered automation pipeline for venture capital
+  image: project-covers/venture-capital.webp
+  summary: Turns information from investment documents into a consistent format so teams can review it with less manual work.
+- title: AI-powered job search tool
+  image: project-covers/job-search.webp
+  summary: Helps me compare roles against my priorities and keep track of opportunities I want to follow up on.
