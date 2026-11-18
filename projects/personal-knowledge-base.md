@@ -23,15 +23,6 @@ Later, I might need to prepare a product discussion, investigate a business prob
 
 The agent searches Logseq for relevant notes and passages, then researches additional material where the task needs it. It brings those resources together into a brief, plan or explanation organised around the request. References link back to the saved notes and external sources, so I can follow an idea to its origin and check how it applies.
 
-<figure class="case-diagram case-diagram-knowledge">
-  <figcaption>The integration I built</figcaption>
-  <ol class="case-steps">
-    <li><strong>Retrieve with sources</strong><span>AI agent → MCP tools → selected Logseq notes, with links to the original passages.</span></li>
-    <li><strong>Compose a draft</strong><span>The agent combines saved context with the current task and any additional research.</span></li>
-    <li><strong>Review and import</strong><span>Draft inbox → plugin preview → confirmed notes as native Logseq blocks.</span></li>
-  </ol>
-</figure>
-
 ## A walkthrough with fictional notes
 
 Imagine I’m learning about onboarding. I read an article about progressive disclosure, collect a screenshot and discuss which settings a new user needs to see first. At the end, I ask the agent to organise the concept, example and open question into a note for Logseq.
@@ -41,6 +32,8 @@ Later, I’m preparing a product discussion about users getting stuck during acc
 {% include knowledge-demo.html %}
 
 ## How I designed and engineered the workflow
+
+{% include knowledge-integration-map.html %}
 
 **Source-linked retrieval.** I implemented block-level keyword search over selected Logseq folders. Results include the page, parent context, an excerpt and a link to the original note; the agent can request a longer passage using a result ID. This gives a summary an inspectable source and keeps retrieval separate from the agent’s interpretation.
 

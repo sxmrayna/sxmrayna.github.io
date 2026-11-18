@@ -1,0 +1,59 @@
+{% if include.view == 'handoff' %}
+<figure class="org-workflow-visual org-handoff-demo" aria-labelledby="org-handoff-caption">
+  <figcaption id="org-handoff-caption">
+    <span class="org-visual-kicker">Illustrative handoff · fictional example</span>
+    <strong>From scattered notes to a reviewable handoff</strong>
+  </figcaption>
+  <div class="org-handoff-desk">
+    <div class="org-handoff-sources">
+      <p class="org-panel-label">Gather the context</p>
+      <div class="org-source-slip"><span aria-hidden="true">01</span><strong>Shared references</strong><small>The project brief</small></div>
+      <div class="org-source-slip"><span aria-hidden="true">02</span><strong>Working notes</strong><small>Decisions and progress</small></div>
+      <div class="org-source-slip"><span aria-hidden="true">03</span><strong>Open actions</strong><small>What still needs an owner</small></div>
+      <p class="org-source-hint">Keep the supporting context attached.</p>
+    </div>
+    <div class="org-handoff-paper">
+      <div class="org-draft-heading"><span class="org-paper-tab">AI draft</span><span>For human review</span></div>
+      <h3>Project handoff</h3>
+      <div class="org-draft-excerpt"><span class="org-panel-label">Summary</span><p>The workshop outline is drafted. Before it is shared, confirm who will review it and when.</p></div>
+      <div class="org-review-checks">
+        <p class="org-panel-label">Rule-based checks</p>
+        <div><span>Action owner</span><strong>Needs confirmation</strong></div>
+        <div><span>Due date</span><strong>Needs confirmation</strong></div>
+      </div>
+      <div class="org-human-step"><span class="org-human-mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="7" r="3"/><path d="M5 20v-2a7 7 0 0 1 14 0v2"/></svg></span><span><strong>Review &amp; hand over</strong><small>Resolve the open issues and confirm next actions.</small></span></div>
+    </div>
+  </div>
+</figure>
+{% else %}
+<figure class="org-workflow-visual org-system-map" aria-labelledby="org-system-caption">
+  <figcaption id="org-system-caption">
+    <span class="org-visual-kicker">Illustrative workflow patterns</span>
+    <strong>Connect the context. Keep the checks.</strong>
+  </figcaption>
+  <div class="org-context-layer">
+    <span class="org-panel-label">Shared organizational context</span>
+    <p>Reference documents <span aria-hidden="true">·</span> Working instructions <span aria-hidden="true">·</span> Prior decisions</p>
+  </div>
+  <svg class="org-environment-branch" viewBox="0 0 640 32" fill="none" preserveAspectRatio="none" aria-hidden="true" focusable="false"><path d="M320 0v7c0 5-4 9-10 9H160v15m160-24c0 5 4 9 10 9h150v15M155 26l5 5 5-5m310 0 5 5 5-5"/></svg>
+  <div class="org-environments">
+    <section class="org-environment org-google" aria-label="Google Workspace experience">
+      <header><span class="org-environment-mark" aria-hidden="true">G</span><h3>Google Workspace</h3></header>
+      <div class="org-tool-group"><span>Working files</span><p>Drive · Docs · Sheets</p></div>
+      <div class="org-tool-group"><span>Agents &amp; automation</span><p>Workspace Studio<br>Apps Script</p></div>
+    </section>
+    <section class="org-environment org-microsoft" aria-label="Microsoft 365 experience">
+      <header><span class="org-environment-mark" aria-hidden="true">M</span><h3>Microsoft 365</h3></header>
+      <div class="org-tool-group"><span>Working files</span><p>SharePoint · Excel</p></div>
+      <div class="org-tool-group"><span>Agents &amp; automation</span><p>Copilot Studio · Power Automate<br>Office Scripts</p></div>
+    </section>
+  </div>
+  <div class="org-ai-interfaces"><span>AI working interfaces</span><p>Claude <i>·</i> ChatGPT <i>·</i> Copilot <i>·</i> Gemini</p></div>
+  <div class="org-work-responsibilities">
+    <div class="org-ai-responsibility"><span class="org-responsibility-symbol" aria-hidden="true">≈</span><strong>AI-supported work</strong><p>Gather context, interpret and draft.</p></div>
+    <div class="org-rule-responsibility"><span class="org-responsibility-symbol" aria-hidden="true">=</span><strong>Defined rules &amp; code</strong><p>Calculate, check required fields and compare with sources.</p></div>
+  </div>
+  <div class="org-review-layer"><span class="org-human-mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="7" r="3"/><path d="M5 20v-2a7 7 0 0 1 14 0v2"/></svg></span><p><strong>Human review &amp; clear handoffs</strong><span>Check sources, resolve issues and confirm the next action.</span></p></div>
+  <p class="org-visual-note">Patterns drawn from work across tool environments. The combination of tools varies with the task and organization.</p>
+</figure>
+{% endif %}

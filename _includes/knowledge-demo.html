@@ -1,4 +1,14 @@
-<figure class="knowledge-demo">
+<div class="knowledge-walkthrough" data-knowledge-walkthrough>
+  <header class="knowledge-walkthrough-heading">
+    <p>Product walkthrough</p>
+    <h3>Learn now. Reuse later.</h3>
+  </header>
+  <div class="knowledge-walkthrough-tabs" role="tablist" aria-label="Explore the knowledge workflow" hidden>
+    <button type="button" role="tab" id="knowledge-capture-tab" aria-controls="knowledge-capture-demo"><span>01</span> Capture a new idea</button>
+    <button type="button" role="tab" id="knowledge-reuse-tab" aria-controls="knowledge-reuse-demo"><span>02</span> Reuse saved knowledge</button>
+  </div>
+  <div class="knowledge-walkthrough-panels">
+<figure class="knowledge-demo" id="knowledge-capture-demo">
   <figcaption>Illustrative interface · fictional learning session</figcaption>
   <div class="knowledge-demo-window">
     <section class="knowledge-demo-agent" aria-labelledby="demo-capture-agent-title">
@@ -26,8 +36,7 @@
     </section>
   </div>
 </figure>
-
-<figure class="knowledge-demo">
+<figure class="knowledge-demo" id="knowledge-reuse-demo">
   <figcaption>Illustrative interface · fictional notes, public research reference</figcaption>
   <div class="knowledge-demo-window">
     <section class="knowledge-demo-notes" aria-labelledby="demo-reuse-notes-title">
@@ -64,3 +73,5 @@
     </section>
   </div>
 </figure>
+  </div>
+</div>

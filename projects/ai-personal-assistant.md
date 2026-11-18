@@ -23,6 +23,8 @@ In venture capital work, this meant understanding how investment information arr
 
 Turning those requirements into working automation means connecting the team’s knowledge, working files and review responsibilities. I draw on in-depth experience using and developing with Google Workspace, Microsoft 365 and AI tools to build agents, scripts and integrations around the way each team works.
 
+{% include organizational-workflow-map.html %}
+
 With **Google Workspace**, I connect Drive, Docs and Sheets as working resources, build AI-assisted workflows with <a href="https://workspace.google.com/studio/" target="_blank" rel="noopener">Workspace Studio {% include new-tab-arrow.html %}</a>, and develop custom automation in <a href="https://developers.google.com/apps-script/overview" target="_blank" rel="noopener">Apps Script {% include new-tab-arrow.html %}</a> for recurring tasks, document handling and data checks.
 
 With **Microsoft 365**, I have developed agents in <a href="https://learn.microsoft.com/en-us/microsoft-copilot-studio/fundamentals-what-is-copilot-studio" target="_blank" rel="noopener">Copilot Studio {% include new-tab-arrow.html %}</a> and multi-step <a href="https://learn.microsoft.com/en-us/power-automate/getting-started" target="_blank" rel="noopener">Power Automate {% include new-tab-arrow.html %}</a> flows integrating SharePoint, Office Scripts and Excel. I engineered prompts and processing steps to extract and transform financial information, group related records, reconcile entities and write structured outputs, automating work that previously required manual data entry.
@@ -37,14 +39,7 @@ For workflows involving financial information, I built a code-based validation p
 
 The illustrative workflow below applies the same principles to a project handoff. An agent drafts a summary from shared references, work notes and open actions. Rules flag missing owners, unclear dates or incomplete fields, so the person handing over the work can resolve those issues before passing it on.
 
-<figure class="case-diagram case-diagram-assistant">
-  <figcaption>An illustrative handoff workflow</figcaption>
-  <ol class="case-steps">
-    <li><strong>Gather the work context</strong><span>Bring together shared references, work notes and open actions.</span></li>
-    <li><strong>Draft and check</strong><span>Use AI to prepare a summary and rules to flag incomplete information.</span></li>
-    <li><strong>Review and hand over</strong><span>Confirm the output, resolve open issues and pass on the next actions.</span></li>
-  </ol>
-</figure>
+{% include organizational-workflow-map.html view='handoff' %}
 
 ## Towards an AI-native organization
 

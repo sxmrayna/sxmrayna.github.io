@@ -15,6 +15,8 @@ A useful conversation needs to connect the assessment context with the situation
 
 I presented this project at <a href="https://www.intent-for-change.org/event/seed-impact-summit-2026/" target="_blank" rel="noopener">SEED Impact Summit 2026 {% include new-tab-arrow.html %}</a>.
 
+{% include coaching-product-demo.html %}
+
 ## My contribution
 
 Within the team, I helped translate an established, research-based leadership assessment into a working AI coaching platform. My contribution covered architecture, product and full-stack development, launch and ongoing improvement.
@@ -24,15 +26,6 @@ Within the team, I helped translate an established, research-based leadership as
 - **Engineering, testing and release.** I worked on automated checks, debugging and release preparation, supported deployment, and continued improving the live app.
 - **Model evaluation and technical decisions.** I developed scenario-based evaluation workflows and compared model strategies against response quality, factual consistency, response time and operating cost.
 - **Product economics and delivery planning.** I built a cost and pricing model, explored subscription scenarios and operating-cost levers, and contributed to the product and technical roadmap, feature backlog and engineering work breakdown.
-
-<figure class="case-diagram case-diagram-coaching">
-  <figcaption>A coaching conversation</figcaption>
-  <ol class="case-steps">
-    <li><strong>Bring a real situation</strong><span>Pick a leadership challenge where an assessment insight might help.</span></li>
-    <li><strong>Reflect with context</strong><span>Explore the challenge through questions informed by relevant coaching material.</span></li>
-    <li><strong>Choose an action</strong><span>Decide what to try in the next conversation or decision.</span></li>
-  </ol>
-</figure>
 
 ## Design decisions behind the experience
 

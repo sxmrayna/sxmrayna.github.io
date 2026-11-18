@@ -1,0 +1,90 @@
+/* Organizational agents: readable system patterns and a fictional handoff desk. */
+.project-body .org-workflow-visual {
+  --org-ink: #2f3e37;
+  --org-mute: #59685f;
+  --org-line: #d6ddd4;
+  margin: 2rem 0 2.4rem;
+  padding: clamp(1rem, 2.6vw, 1.65rem);
+  border: 1px solid var(--org-line);
+  border-radius: 5px 1.75rem 5px 5px;
+  background: linear-gradient(145deg, #faf8f3, #f2f5ef);
+  color: var(--org-ink);
+}
+.org-workflow-visual figcaption { margin-bottom: 1.35rem; }
+.org-workflow-visual figcaption > strong { display: block; margin-top: .35rem; font: 600 clamp(1.45rem, 2.8vw, 1.95rem)/1.13 var(--display); letter-spacing: -.018em; }
+.org-workflow-visual .org-visual-kicker { color: var(--org-mute); font: 500 .7rem/1.4 var(--body); letter-spacing: .035em; }
+.org-workflow-visual .org-panel-label { display: block; color: var(--org-mute); font-size: .72rem; font-weight: 600; line-height: 1.4; }
+.org-workflow-visual p { margin: 0; }
+.org-context-layer { padding: .9rem 1rem; border-block: 1px solid #dfd6c8; background: #f2ede3; text-align: center; }
+.org-context-layer p { margin-top: .4rem; font-size: .83rem; line-height: 1.6; }
+.org-context-layer p span { padding-inline: .28rem; color: #9d927e; }
+.org-environment-branch { display: block; width: 100%; height: 1.9rem; stroke: #a5b19e; stroke-width: 1.25; stroke-linecap: round; stroke-linejoin: round; }
+.org-environments { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; }
+.org-environment { min-width: 0; overflow: hidden; border: 1px solid #ccd9d3; border-radius: 5px; background: #fbfcfa; }
+.org-environment header { display: flex; align-items: center; gap: .55rem; padding: .8rem .85rem; background: #eaf0e8; }
+.org-environment.org-microsoft { border-color: #d9d0e3; }
+.org-microsoft header { background: #eee8f4; }
+.org-workflow-visual .org-environment h3 { margin: 0; font: 650 .9rem/1.25 var(--body); letter-spacing: -.015em; }
+.org-environment-mark { display: grid; flex: 0 0 auto; place-items: center; width: 1.65rem; height: 1.65rem; border: 1px solid #91a58f; border-radius: 50%; color: #526b4c; font: 600 .85rem/1 var(--body); }
+.org-microsoft .org-environment-mark { color: #6c5980; border-color: #ad9abf; border-radius: 4px; }
+.org-tool-group { padding: .7rem .9rem; }
+.org-tool-group + .org-tool-group { border-top: 1px solid #e1e5df; }
+.org-tool-group > span { display: block; margin-bottom: .25rem; color: var(--org-mute); font-size: .68rem; font-weight: 500; }
+.org-tool-group p { font-size: .8rem; line-height: 1.55; overflow-wrap: anywhere; }
+.org-ai-interfaces { margin-block: .9rem; padding: .65rem .5rem; border-block: 1px dashed #cbd6c7; text-align: center; }
+.org-ai-interfaces > span { display: block; color: var(--org-mute); font-size: .68rem; }
+.org-ai-interfaces p { margin-top: .2rem; font-size: .83rem; font-weight: 550; }
+.org-ai-interfaces i { padding-inline: .35rem; font-style: normal; color: #9cae99; }
+.org-work-responsibilities { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .8rem; }
+.org-work-responsibilities > div { position: relative; padding: .9rem .9rem .9rem 2.5rem; border-radius: 5px; background: #f5eae0; }
+.org-work-responsibilities .org-rule-responsibility { background: #e8eff4; }
+.org-responsibility-symbol { position: absolute; left: .85rem; top: .65rem; color: #876e58; font: 500 1.55rem/1.3 var(--display); }
+.org-rule-responsibility .org-responsibility-symbol { color: #5a7890; }
+.org-work-responsibilities strong { display: block; font-size: .8rem; line-height: 1.4; }
+.org-work-responsibilities p { margin-top: .3rem; font-size: .75rem; line-height: 1.5; }
+.org-review-layer { display: flex; align-items: center; gap: .75rem; margin-top: 1rem; padding: .85rem .95rem; border: 1px solid #c5d2bf; border-radius: 5px; background: #f8fbf5; }
+.org-human-mark { display: grid; flex: 0 0 auto; place-items: center; width: 2.1rem; height: 2.1rem; border-radius: 50%; background: #e2ebdc; }
+.org-human-mark svg { width: 1.35rem; height: 1.35rem; stroke: #5e7657; stroke-width: 1.2; stroke-linecap: round; }
+.org-review-layer strong { display: block; font-size: .83rem; line-height: 1.4; }
+.org-review-layer p span { display: block; margin-top: .2rem; color: var(--org-mute); font-size: .74rem; line-height: 1.5; }
+.org-workflow-visual .org-visual-note { margin: .85rem 0 0; color: var(--org-mute); font-size: .7rem; line-height: 1.5; }
+.project-body .org-handoff-demo { padding: 0; border-color: #d5d9ce; background: #f0f1e8; }
+.org-handoff-demo figcaption { padding: clamp(1rem, 2.6vw, 1.65rem); margin: 0; }
+.org-handoff-desk { display: grid; grid-template-columns: minmax(0, .8fr) minmax(0, 1.25fr); gap: 1rem; padding: 0 clamp(.8rem, 2vw, 1.25rem) 1.25rem; }
+.org-handoff-sources { min-width: 0; padding: .55rem .15rem; }
+.org-source-slip { position: relative; margin-top: .7rem; padding: .75rem .6rem .7rem 2.15rem; border: 1px solid #e0d8c9; border-radius: 2px 10px 2px 2px; background: #fbf9f2; box-shadow: 0 3px 7px -5px #625b4d66; }
+.org-source-slip:nth-of-type(2) { margin-inline: .25rem -.05rem; background: #edf2f5; border-color: #d4dfe5; }
+.org-source-slip:nth-of-type(3) { margin-inline: -.05rem .25rem; background: #f0eaf6; border-color: #ddd3e8; }
+.org-source-slip > span { position: absolute; left: .6rem; top: .8rem; color: #8a8070; font-size: .62rem; }
+.org-source-slip > strong { display: block; font-size: .79rem; line-height: 1.35; }
+.org-source-slip small { display: block; margin-top: .2rem; color: var(--org-mute); font-size: .7rem; line-height: 1.45; }
+.org-handoff-sources .org-source-hint { margin-top: 1rem; color: var(--org-mute); font: italic 500 1rem/1.35 var(--display); }
+.org-handoff-paper { min-width: 0; padding: 1rem; border: 1px solid #d8d7cf; border-radius: 3px 3px 14px 3px; background: #fffefa; box-shadow: 0 5px 12px -8px #5c635655; }
+.org-draft-heading { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: .35rem; padding-bottom: .85rem; border-bottom: 1px solid #e4e4da; font-size: .63rem; color: var(--org-mute); }
+.org-paper-tab { padding: .25rem .45rem; border-radius: 2px; background: #eee8f5; color: #77618b; font-size: .65rem; }
+.org-workflow-visual .org-handoff-paper h3 { margin: 1.1rem 0 1rem; font: 600 1.8rem/1.1 var(--display); }
+.org-draft-excerpt p { margin: .4rem 0 1rem; font-size: .78rem; line-height: 1.55; }
+.org-review-checks { padding-top: .75rem; border-top: 1px solid #e5e5dd; }
+.org-review-checks > div { display: grid; grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr); align-items: baseline; gap: .5rem; padding: .6rem 0; border-bottom: 1px solid #ece9df; font-size: .72rem; line-height: 1.45; }
+.org-review-checks > div strong { color: #8a7045; font-size: .65rem; font-weight: 500; text-align: right; }
+.org-human-step { display: flex; gap: .6rem; align-items: center; margin-top: 1rem; }
+.org-human-step strong { display: block; font-size: .78rem; line-height: 1.35; }
+.org-human-step small { display: block; margin-top: .25rem; color: var(--org-mute); font-size: .69rem; line-height: 1.45; }
+@media (max-width: 600px) {
+  .org-environments, .org-work-responsibilities { grid-template-columns: minmax(0, 1fr); }
+  .org-environment-branch { display: none; }
+  .org-environments { margin-top: .9rem; }
+  .org-environment header { padding-block: .6rem; }
+  .org-tool-group { display: grid; grid-template-columns: minmax(0, .65fr) minmax(0, 1.35fr); align-items: baseline; gap: .6rem; }
+  .org-tool-group > span { margin: 0; }
+  .org-work-responsibilities > div { padding-block: .75rem; }
+  .org-ai-interfaces i { padding-inline: .15rem; }
+  .org-handoff-desk { grid-template-columns: minmax(0, 1fr); }
+  .org-handoff-sources { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: .45rem; }
+  .org-handoff-sources > .org-panel-label, .org-handoff-sources .org-source-hint { grid-column: 1 / -1; }
+  .org-source-slip, .org-source-slip:nth-of-type(2), .org-source-slip:nth-of-type(3) { margin: 0; padding: 1.4rem .45rem .55rem; }
+  .org-source-slip > span { top: .4rem; left: .45rem; }
+  .org-source-slip > strong { font-size: .72rem; }
+  .org-source-slip small { font-size: .64rem; }
+  .org-handoff-sources .org-source-hint { margin-top: .1rem; }
+}

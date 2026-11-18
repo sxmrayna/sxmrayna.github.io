@@ -17,14 +17,7 @@ The business problem was the effort involved in gathering information from diffe
 
 The prototype combines recurring information gathering with user-initiated briefing requests. Coordinated agents bring relevant context together around a consultant’s question, while the conversational interface provides a way to request and review a briefing. The user can then check the supporting information and identify topics worth discussing.
 
-<figure class="case-diagram case-diagram-insurance">
-  <figcaption>A high-level view of the prototype</figcaption>
-  <ol class="case-steps">
-    <li><strong>Describe the preparation need</strong><span>Start with the question or meeting the user is preparing for.</span></li>
-    <li><strong>Bring relevant context together</strong><span>Organise supporting information into a focused briefing.</span></li>
-    <li><strong>Review and prepare</strong><span>Check the context and choose topics for the discussion.</span></li>
-  </ol>
-</figure>
+{% include broker-brief-demo.html %}
 
 An important design question was what would make the output useful to the person preparing for the meeting. A concise summary also needs enough context to explain why information matters and where to check it.
 
