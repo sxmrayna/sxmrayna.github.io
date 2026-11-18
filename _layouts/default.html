@@ -24,18 +24,24 @@
   <link href="https://fonts.googleapis.com/css2?family=IM+Fell+English:ital@1&amp;display=swap" rel="stylesheet">
   <link rel="stylesheet" href="{{ '/assets/portfolio/journal-type.css' | relative_url }}">
   {% endif %}
-  {% if page.body_class == "portfolio-home" or page.body_class == "journal-page" %}
-  <link rel="stylesheet" href="{{ '/assets/portfolio/book-transition.css' | relative_url }}">
+  {% if page.body_class == "portfolio-home" or page.body_class == "journal-page" or page.layout == "post" or page.layout == "project" %}
+  {% assign reading_asset_version = site.time | date: '%s' %}
+  <link rel="stylesheet" href="{{ '/assets/portfolio/book-transition.css' | relative_url }}?v={{ reading_asset_version }}">
+  {% endif %}
+  {% if page.body_class == "journal-page" or page.layout == "post" or page.layout == "project" %}
+  <script src="{{ '/assets/portfolio/reading-transitions.js' | relative_url }}?v={{ reading_asset_version }}" defer blocking="render"></script>
   {% endif %}
   {% if page.body_class == "journal-page" %}
   <script src="{{ '/assets/portfolio/journal-pagination.js' | relative_url }}" defer></script>
   {% endif %}
   {% if page.body_class == "portfolio-home" %}
   <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&amp;family=Dancing+Script:wght@700&amp;display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="{{ '/assets/portfolio/project-wheel.css' | relative_url }}">
+  {% assign wheel_asset_version = site.time | date: '%s' %}
+  <link rel="stylesheet" href="{{ '/assets/portfolio/project-wheel.css' | relative_url }}?v={{ wheel_asset_version }}">
   <script src="{{ '/assets/portfolio/home.js' | relative_url }}" defer></script>
-  <script src="{{ '/assets/portfolio/project-wheel.js' | relative_url }}" defer></script>
+  <script src="{{ '/assets/portfolio/project-wheel.js' | relative_url }}?v={{ wheel_asset_version }}" defer></script>
   {% endif %}
+  {% if page.body_class == "shelves-page" %}<link rel="stylesheet" href="{{ '/assets/portfolio/shelves.css' | relative_url }}">{% endif %}
   {% if page.layout == "project" %}<link rel="stylesheet" href="{{ '/assets/portfolio/case-diagrams.css' | relative_url }}">{% endif %}
   {% if page.math %}{% include mathjax.html %}{% endif %}
 </head>

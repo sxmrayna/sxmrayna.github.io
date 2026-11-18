@@ -4,17 +4,25 @@ layout: default
 
 <div class="shell project-page"{% if page.illustration %} data-case="{{ page.illustration | escape }}"{% endif %}>
   <header class="project-heading">
-    <a class="text-link back-link" href="{{ '/#work' | relative_url }}">Back to AI projects</a>
-    <p class="eyebrow">{{ page.context | escape }}</p>
-    <h1>{{ page.title | escape }}</h1>
-    <p class="project-lead">{{ page.description | escape }}</p>
+    <div class="project-heading-copy">
+      <a class="text-link back-link" href="{{ '/#work' | relative_url }}"><span aria-hidden="true">←</span> Back to AI projects</a>
+      <p class="eyebrow">{{ page.context | escape }}</p>
+      <h1>{{ page.title | escape }}</h1>
+      <p class="project-lead">{{ page.description | escape }}</p>
+    </div>
+    {% if page.illustration %}
+    {% assign illustration = '/assets/portfolio/cases/' | append: page.illustration | append: '.webp' %}
+    <div class="project-heading-art">
+      <img class="case-illustration" src="{{ illustration | relative_url }}" alt="" width="1000" height="667" decoding="async" fetchpriority="high">
+    </div>
+    {% endif %}
   </header>
-  {% if page.illustration %}
-  {% assign illustration = '/assets/portfolio/cases/' | append: page.illustration | append: '.webp' %}
-  <img class="case-illustration" src="{{ illustration | relative_url }}" alt="" width="1000" height="667" decoding="async">
-  {% endif %}
-  <div class="project-body post-content">
-    {{ content }}
+  <div class="project-reading-grid">
+    {% include project-contents.html body=content %}
+    {% include project-contents.html body=content mobile=true %}
+    <div class="project-body post-content" id="project-details">
+      {{ content }}
+    </div>
   </div>
 
   {% assign published_projects = site.data.projects | where_exp: 'project', 'project.url' %}
@@ -34,13 +42,13 @@ layout: default
   {% if previous_project or next_project %}
   <nav class="project-pagination" aria-label="Adjacent AI projects">
     {% if previous_project %}
-    <a class="project-page-link project-page-previous" href="{{ previous_project.url | relative_url }}" rel="prev">
+    <a class="project-page-link project-page-previous" data-reading-direction="backward" href="{{ previous_project.url | relative_url }}" rel="prev">
       <span class="project-page-direction">Previous project</span>
       <span class="project-page-title">{{ previous_project.title | escape }}</span>
     </a>
     {% endif %}
     {% if next_project %}
-    <a class="project-page-link project-page-next" href="{{ next_project.url | relative_url }}" rel="next">
+    <a class="project-page-link project-page-next" data-reading-direction="forward" href="{{ next_project.url | relative_url }}" rel="next">
       <span class="project-page-direction">Next project</span>
       <span class="project-page-title">{{ next_project.title | escape }}</span>
     </a>

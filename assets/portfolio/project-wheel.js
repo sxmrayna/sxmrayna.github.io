@@ -15,12 +15,17 @@ document.querySelectorAll('[data-project-wheel]').forEach((wheel) => {
   let sparkleAnimation;
   let stopCardMotion;
 
-  reducedWheelMotion.addEventListener('change', ({ matches }) => {
+  const handleMotionPreference = ({ matches }) => {
     if (matches) {
       stopCardMotion?.();
       sparkleAnimation?.cancel();
     }
-  });
+  };
+  if (typeof reducedWheelMotion.addEventListener === 'function') {
+    reducedWheelMotion.addEventListener('change', handleMotionPreference);
+  } else if (typeof reducedWheelMotion.addListener === 'function') {
+    reducedWheelMotion.addListener(handleMotionPreference);
+  }
 
   function slideCards(outgoing, incoming, turn) {
     const forwardEdge = 'calc(100% + 4px)';
@@ -116,6 +121,8 @@ document.querySelectorAll('[data-project-wheel]').forEach((wheel) => {
 
   selectProject(0, 0);
   wheel.dataset.enhanced = '';
-  wheel.querySelector('[data-wheel-stage]').hidden = false;
+  const stage = wheel.querySelector('[data-wheel-stage]');
+  stage.hidden = false;
+  stage.inert = false;
   wheel.querySelector('[data-wheel-controls]').hidden = false;
 });

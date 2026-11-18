@@ -1,0 +1,27 @@
+{% assign project_sections = include.body | split: '<h2 id="' %}
+{% if project_sections.size > 1 %}
+{% capture project_contents %}
+<ol>
+  {% for section in project_sections offset:1 %}
+    {% assign section_id = section | split: '"' | first %}
+    {% assign section_heading = section | split: '</h2>' | first %}
+    {% capture section_markup %}<h2 id="{{ section_heading }}</h2>{% endcapture %}
+    {% assign section_title = section_markup | strip_html | strip %}
+    <li><a href="#{{ section_id | escape }}">{{ section_title | escape_once }}</a></li>
+  {% endfor %}
+</ol>
+{% endcapture %}
+{% if include.mobile %}
+<details class="project-contents project-contents-mobile">
+  <summary>In this project</summary>
+  <nav aria-label="Project contents">{{ project_contents }}</nav>
+</details>
+{% else %}
+<aside class="project-contents project-contents-desktop">
+  <nav aria-label="Project contents">
+    <p class="project-contents-label">In this project</p>
+    {{ project_contents }}
+  </nav>
+</aside>
+{% endif %}
+{% endif %}

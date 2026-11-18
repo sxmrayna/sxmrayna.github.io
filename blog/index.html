@@ -32,7 +32,7 @@ body_class: journal-page
     <article class="journal-item">
       <time datetime="{{ post.date | date: '%Y-%m-%d' }}">{{ post.date | date: '%b %d, %Y' }}</time>
       <div>
-        <h2><a href="{{ post.url | relative_url }}">{{ post.title | escape }}</a></h2>
+        <h2><a data-journal-open href="{{ post.url | relative_url }}">{{ post.title | escape }}</a></h2>
         {% assign excerpt = post.excerpt | strip_html | normalize_whitespace %}
         {% if excerpt == empty %}
           {% assign excerpt = post.content | markdownify | strip_html | normalize_whitespace %}

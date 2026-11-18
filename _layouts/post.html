@@ -7,7 +7,7 @@ body_class: article-page
 <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
 
   <header class="post-header">
-    <a class="text-link" href="{{ '/blog/' | relative_url }}">Back to River of Memories</a>
+    <a class="text-link" data-journal-close href="{{ '/blog/' | relative_url }}">Back to River of Memories</a>
 
     <h1 class="post-title p-name" itemprop="name headline">{{ page.title | escape }}</h1>
     <p class="post-meta">
@@ -75,14 +75,14 @@ body_class: article-page
 
     <nav class="post-pagination" aria-label="Adjacent posts">
       {% if page.next %}
-        <a class="post-previous" href="{{ page.next.url | relative_url }}" rel="prev">
+        <a class="post-previous" data-reading-direction="backward" href="{{ page.next.url | relative_url }}" rel="prev">
           <span class="post-pagination-label">Newer post</span>
           <span class="post-pagination-title">{{ page.next.title | markdownify | strip_html }}</span>
         </a>
       {% endif %}
 
       {% if page.previous %}
-        <a class="post-next" href="{{ page.previous.url | relative_url }}" rel="next">
+        <a class="post-next" data-reading-direction="forward" href="{{ page.previous.url | relative_url }}" rel="next">
           <span class="post-pagination-label">Older post</span>
           <span class="post-pagination-title">{{ page.previous.title | markdownify | strip_html }}</span>
         </a>

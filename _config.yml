@@ -6,7 +6,7 @@ baseurl: ""
 url: "https://sxmrayna.github.io"
 logo: logo.png
 lang: en
-shelves_url: "https://mildwildwind.notion.site/Shelves-f881f08db0844389a2ca45ff5d2e8d11?pvs=4"
+shelves_url: "/shelves/"
 places_url: "https://mildwildwind.notion.site/e0280d9d384940a6a08dbbdafc30a4e2?v=b73b4a7cd61d4422901a69120b88ef20"
 
 plugins:

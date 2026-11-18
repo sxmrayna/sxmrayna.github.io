@@ -1,0 +1,110 @@
+---
+layout: default
+title: Shelves
+description: Books, films, performances, music, and places I’ve lived and visited.
+body_class: shelves-page
+permalink: /shelves/
+---
+
+<div class="shelves-library shell">
+  <header class="shelves-heading">
+    <div class="shelves-heading-copy">
+      <p class="eyebrow">A personal collection</p>
+      <h1>Shelves<span class="shelves-title-star" aria-hidden="true">✧</span></h1>
+      <p class="shelves-intro">Books, films, performances, music,<br>and places I’ve been.</p>
+    </div>
+    <div class="shelves-heading-art" aria-hidden="true">
+      <span class="shelves-handnote">collected, slowly</span>
+      <svg viewBox="0 0 240 180" fill="none" focusable="false">
+        <path class="shelves-art-wash" d="M57 148c-26-27-25-81 10-107 37-28 104-17 123 16 26 47-8 101-58 107-30 4-55-1-75-16Z"/>
+        <path class="shelves-art-book" d="m42 122 116-7 31 17-117 8-30-18Zm0 0v14l30 18 117-9v-13M72 140v14"/>
+        <path class="shelves-art-page" d="m49 127 23 14 110-7m-133-3 23 14 110-7m-133-3 23 14 110-7"/>
+        <path class="shelves-art-book shelves-art-book-top" d="m61 105 97-8 24 13-97 8-24-13Zm0 0v12l24 13 97-8v-12m-97 8v12"/>
+        <path class="shelves-art-page" d="m67 110 18 10 91-8m-109 2 18 10 91-8"/>
+        <path class="shelves-art-stem" d="M132 99c-9-26-5-48 13-72m-14 53c-13-1-19-8-17-20 13 2 18 8 17 20Zm4-18c12-2 19-9 19-21-13 3-19 10-19 21Zm6-25c-9-2-13-8-11-18 9 3 12 9 11 18Z"/>
+        <path class="shelves-art-spark" d="M61 65v12m-6-6h12m117-23v9m-4-4h9m12 39v13m-6-6h12"/>
+      </svg>
+    </div>
+    {% include botanical-sprig.html class="shelves-heading-sprig" %}
+  </header>
+
+  <section class="shelves-daily" aria-labelledby="daily-title">
+    <div class="shelves-section-heading">
+      <h2 id="daily-title">Daily</h2>
+      <span class="shelves-section-line" aria-hidden="true"></span>
+      <span class="shelves-section-note">the things I come back to</span>
+    </div>
+    <div class="daily-shelves">
+      {% for entry in site.data.shelves.daily %}
+      {% assign shelf_position = forloop.index0 | modulo: 2 %}
+      {% if shelf_position == 0 %}<ul class="shelf-row">{% endif %}
+        <li class="shelf-volume">
+          <a class="shelf-book shelf-book-{{ entry.tone | escape }}" href="{{ entry.url | escape }}" target="_blank" rel="noopener">
+            <span class="shelf-book-binding" aria-hidden="true"></span>
+            <span class="shelf-book-corner" aria-hidden="true"></span>
+            <span class="shelf-book-number" aria-hidden="true">0{{ forloop.index }}</span>
+            <span class="shelf-book-illustration" aria-hidden="true">
+              <svg viewBox="0 0 100 88" fill="none" focusable="false">
+                {% case entry.icon %}
+                {% when 'book' %}
+                <path d="M50 29c-12-9-24-12-37-11v47c14-1 26 2 37 11 11-9 23-12 37-11V18c-13-1-25 2-37 11Zm0 0v47M23 29c7 0 13 2 19 5m-19 6c7 0 13 2 19 5m-19 6c7 0 13 2 19 5m16-22c6-3 12-5 19-5m-19 16c6-3 12-5 19-5m-19 16c6-3 12-5 19-5"/>
+                <path class="shelf-icon-accent" d="M64 19C63 9 70 4 78 4c0 10-6 16-14 15Zm0 0-5 9"/>
+                {% when 'film' %}
+                <rect x="12" y="17" width="76" height="55" rx="4"/>
+                <path d="M26 17v55m48-55v55M13 29h13m-13 13h13m-13 17h13m48-30h13M74 42h13M74 59h13M43 32l18 12-18 12V32Z"/>
+                <path class="shelf-icon-accent" d="m57 6 3 5 6 1-5 4 1 6-5-3-5 3 1-6-4-4 6-1 2-5Z"/>
+                {% when 'ticket' %}
+                <path d="m14 32 63-17 9 34c-6 2-8 6-7 10L22 75l-4-15c6-2 8-7 6-12s-6-8-12-7l2-9Z"/>
+                <path d="m61 20 3 9m2 7 3 10m2 7 3 10M31 39l20-6m-17 17 20-6m-16 18 12-3"/>
+                <path class="shelf-icon-accent" d="m23 10 2 5 6 1-5 3 1 6-4-3-5 3 1-6-4-3 6-1 2-5Z"/>
+                {% when 'music' %}
+                <circle cx="49" cy="45" r="30"/>
+                <circle cx="49" cy="45" r="21"/>
+                <circle cx="49" cy="45" r="8"/>
+                <circle cx="49" cy="45" r="2"/>
+                <path d="M28 36c3-7 8-11 15-12m13 41c7-2 12-7 14-14M78 5v21m0-21 11-3v19m-11-6 11-3"/>
+                <path class="shelf-icon-accent" d="M78 26c0 3-3 5-6 4-3-1-3-4 0-6s6-1 6 2Zm11-5c0 3-3 5-6 4-3-1-3-4 0-6s6-1 6 2Z"/>
+                {% else %}
+                <path d="M21 68c18-25 35-43 58-51M34 51C19 50 15 40 17 31c14 1 20 9 17 20Zm16-16c0-14 9-21 20-21-1 14-8 21-20 21Zm-4 5c13-2 23 3 27 13-14 4-23-1-27-13Z"/>
+                {% endcase %}
+              </svg>
+            </span>
+            <span class="shelf-book-title">{{ entry.title | escape }}</span>
+            {% if entry.description %}<span class="shelf-book-description">{{ entry.description | escape }}</span>{% endif %}
+            <span class="shelf-book-open">Open collection {% include new-tab-arrow.html %}</span>
+          </a>
+        </li>
+      {% if shelf_position == 1 or forloop.last %}</ul>{% endif %}
+      {% endfor %}
+    </div>
+  </section>
+
+  <section class="shelves-travel" aria-labelledby="travel-shelf-title">
+    <div class="shelves-section-heading">
+      <h2 id="travel-shelf-title">Out in the world</h2>
+      <span class="shelves-section-line" aria-hidden="true"></span>
+    </div>
+    {% assign travel = site.data.shelves.travel %}
+    <a class="shelves-travel-notebook" href="{{ travel.url | escape }}" target="_blank" rel="noopener">
+      <span class="travel-notebook-binding" aria-hidden="true"></span>
+      <span class="travel-notebook-copy">
+        <span class="travel-notebook-label">Lived &amp; visited</span>
+        <span class="travel-notebook-title">{{ travel.title | escape }}</span>
+        {% if travel.description %}<span class="travel-notebook-description">{{ travel.description | escape }}</span>{% endif %}
+        <span class="travel-notebook-open">Take a look {% include new-tab-arrow.html %}</span>
+      </span>
+      <span class="travel-postcard" aria-hidden="true">
+        <span class="travel-postcard-stamp"><svg viewBox="0 0 50 55" fill="none" focusable="false"><path d="m7 41 12-18 8 10 7-16 10 24H7Zm5-25h9m-4-4v8"/><circle cx="35" cy="10" r="4"/></svg></span>
+        <svg class="travel-postcard-map" viewBox="0 0 330 180" fill="none" focusable="false">
+          <path class="travel-map-land" d="M-7 142c29 17 70 10 88-17 16-25 9-53 37-65 36-15 49 15 72 3 26-13 20-42 58-40 32 2 50 21 88 4v165H-7v-50Z"/>
+          <path class="travel-map-contour" d="M-5 156c39 10 67-4 89-32 21-27 14-44 40-51 29-9 47 19 70 3 27-17 27-41 59-38m-258 131c47 8 77-11 99-40 19-25 17-35 33-40 25-8 40 19 70 0"/>
+          <path class="travel-map-route" d="M48 125c11-37 53-21 73-12 48 22 42-50 82-50 22 0 28 21 46 10"/>
+          <circle class="travel-map-dot" cx="48" cy="125" r="4"/><path class="travel-map-star" d="m251 59 3 9 10 1-8 6 2 10-7-6-8 6 3-10-8-6 10-1 3-9Z"/>
+          <path class="travel-map-compass" d="m294 119 5 15 15 5-15 5-5 15-5-15-15-5 15-5 5-15Zm0 8v24m-12-12h24"/>
+        </svg>
+        <span class="travel-postcard-note">here &amp; there</span>
+      </span>
+    </a>
+  </section>
+  {% include closing-flourish.html %}
+</div>

@@ -1,6 +1,7 @@
-<div class="project-wheel {{ include.variant }}" data-project-wheel>
+{% assign wheel_total = include.projects | size %}
+<div class="project-wheel {{ include.variant }}" data-project-wheel data-wheel-total="{{ wheel_total }}" style="--wheel-step: {{ 360.0 | divided_by: wheel_total }}deg;">
   {% if include.title %}<h2 class="project-wheel-heading" id="{{ include.heading_id }}">{{ include.title | escape }}</h2>{% endif %}
-  <div class="project-wheel-stage" data-wheel-stage hidden>
+  <div class="project-wheel-stage" data-wheel-stage inert>
     <div class="project-wheel-dial">
       {% if include.title %}
       <svg class="project-wheel-ring-title" viewBox="0 0 420 420" aria-hidden="true" focusable="false">
@@ -33,8 +34,13 @@
       {% for project in include.projects %}
       <article class="project-wheel-panel" id="{{ include.id }}-panel-{{ forloop.index }}" data-wheel-panel>
         {% if project.image %}
-        {% assign cover = '/assets/portfolio/' | append: project.image %}
-        <img class="project-wheel-cover" src="{{ cover | relative_url }}" alt="" loading="lazy" decoding="async">
+        {% assign cover_initial = project.image | slice: 0, 1 %}
+        {% if cover_initial == '/' %}
+          {% assign cover = project.image %}
+        {% else %}
+          {% assign cover = '/assets/portfolio/' | append: project.image %}
+        {% endif %}
+        <img class="project-wheel-cover{% if project.cover_fit == 'cover' %} project-wheel-cover-fill{% endif %}" src="{{ cover | relative_url }}" alt="" loading="lazy" decoding="async">
         {% endif %}
         {% assign project_context = project.context %}
         {% if project.url %}

@@ -262,3 +262,171 @@
   .project-pagination { grid-template-columns: 1fr; }
   .project-page-next { grid-column: 1; }
 }
+
+/* Shared editorial layout for the four AI case studies. */
+.project-page[data-case] {
+  max-width: 1140px;
+  padding-block: clamp(1.75rem, 4vw, 4rem);
+  --accent: var(--case-accent);
+}
+.project-page[data-case] .project-heading {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1.12fr) minmax(0, 0.88fr);
+  align-items: center;
+  gap: clamp(1.25rem, 3vw, 2.5rem);
+  padding: clamp(1.35rem, 3.6vw, 3rem);
+  border: 1px solid var(--case-line);
+  border-top: 2px solid var(--case-accent);
+  border-radius: 3px 3px 2rem 3px;
+  background: linear-gradient(125deg, #fcfbf9 8%, var(--case-wash) 100%);
+}
+.project-page .project-heading-copy { min-width: 0; }
+.project-page .project-heading .back-link {
+  margin-bottom: clamp(1.3rem, 3vw, 2rem);
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+.project-page .project-heading .back-link span { margin-right: 0.3em; }
+.project-page .project-heading h1 {
+  max-width: 16ch;
+  margin-block: 0.3em 0.4em;
+  font-size: clamp(2.55rem, 4.4vw, 4.5rem);
+  line-height: 1.01;
+  letter-spacing: -0.035em;
+  overflow-wrap: break-word;
+}
+.project-page .project-lead {
+  max-width: 42ch;
+  margin-bottom: 0;
+  font-size: clamp(1rem, 1.55vw, 1.13rem);
+  line-height: 1.65;
+}
+.project-page .project-heading-art {
+  min-width: 0;
+  overflow: hidden;
+  border-radius: 1.8rem 0.4rem 1.8rem 0.4rem;
+  background: var(--case-wash);
+  box-shadow: 0 12px 24px -20px #39334355;
+}
+.project-page .project-heading .case-illustration {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: none;
+  margin: 0;
+  border-radius: 0;
+  aspect-ratio: 1000 / 667;
+  object-fit: cover;
+  mix-blend-mode: multiply;
+}
+.project-page .project-reading-grid {
+  display: grid;
+  grid-template-columns: minmax(9rem, 12rem) minmax(0, 44rem);
+  justify-content: center;
+  align-items: start;
+  gap: clamp(1.75rem, 4vw, 3.25rem);
+  margin-top: clamp(2rem, 5vw, 4rem);
+}
+.project-page .project-contents-desktop { position: sticky; top: 2rem; }
+.project-page .project-contents-mobile { display: none; }
+.project-page .project-contents-label {
+  margin: 0 0 0.9rem;
+  color: var(--case-accent);
+  font: italic 600 1.35rem/1.2 var(--display);
+}
+.project-page .project-contents ol {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  counter-reset: project-contents;
+}
+.project-page .project-contents li { margin: 0; counter-increment: project-contents; }
+.project-page .project-contents a {
+  display: block;
+  position: relative;
+  padding: 0.65rem 0.45rem 0.65rem 1.7rem;
+  border-left: 1px solid var(--case-line);
+  color: var(--muted);
+  font-size: 0.8rem;
+  line-height: 1.45;
+  text-decoration: none;
+  overflow-wrap: anywhere;
+  transition: color 180ms ease, background-color 180ms ease;
+}
+.project-page .project-contents a::before {
+  position: absolute;
+  left: 0.5rem;
+  top: 0.7rem;
+  content: counter(project-contents, decimal-leading-zero);
+  color: var(--case-accent);
+  font-size: 0.6rem;
+}
+.project-page .project-contents a:is(:hover, :focus-visible) {
+  color: var(--case-accent);
+  border-left-color: var(--case-accent);
+  background: var(--case-wash);
+}
+.project-page .project-contents a:focus-visible { outline: 2px solid var(--case-accent); outline-offset: 2px; }
+.project-page .project-body {
+  min-width: 0;
+  max-width: none;
+  margin: 0;
+  font-size: 1.035rem;
+  line-height: 1.78;
+  counter-reset: case-section;
+}
+.project-page .project-body > h2 {
+  margin: 2.6rem 0 1.1rem;
+  padding-top: 1.35rem;
+  border-top: 1px solid var(--case-line);
+  font-size: clamp(1.85rem, 3vw, 2.55rem);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  counter-increment: case-section;
+  scroll-margin-top: 2rem;
+}
+.project-page .project-body > h2:first-child { margin-top: 0; }
+.project-page .project-body > h2::before {
+  display: block;
+  margin-bottom: 0.65rem;
+  color: var(--case-accent);
+  content: counter(case-section, decimal-leading-zero);
+  font: 500 0.67rem/1 var(--body);
+  letter-spacing: 0.08em;
+}
+.project-page .project-body > h2:target { color: var(--case-accent); }
+.project-page .project-body > ul { padding-left: 1.15rem; }
+.project-page .project-body > ul > li { margin-block: 0.85rem; padding-left: 0.25rem; }
+.project-page .project-body > ul > li::marker { color: var(--case-accent); }
+.project-page .project-body > ul > li > strong:first-child { color: var(--case-accent); }
+.project-page .project-body .case-diagram {
+  margin-block: 2rem;
+  border-color: var(--case-line);
+  border-radius: 6px 1.5rem 6px 6px;
+  background: linear-gradient(135deg, var(--case-wash), #fcfbf9);
+}
+.project-page .project-pagination {
+  max-width: 44rem;
+  margin: clamp(2.75rem, 5vw, 4rem) 0 0 auto;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--case-line);
+}
+.project-page .project-page-link { border-color: var(--case-line); background: #fcfbf9; }
+.project-page .project-page-link:is(:hover, :focus-visible) { border-color: var(--case-accent); background: var(--case-wash); }
+@media (max-width: 860px) {
+  .project-page .project-reading-grid { grid-template-columns: minmax(0, 1fr); gap: 1.5rem; max-width: 44rem; margin-inline: auto; }
+  .project-page .project-contents-desktop { display: none; }
+  .project-page .project-contents-mobile { display: block; padding: 0.85rem 1rem; border: 1px solid var(--case-line); border-radius: 5px; background: #fcfbf9; }
+  .project-page .project-contents-mobile summary { color: var(--case-accent); font: italic 600 1.25rem/1.35 var(--display); cursor: pointer; }
+  .project-page .project-contents-mobile[open] summary { margin-bottom: 0.75rem; }
+  .project-page .project-pagination { margin-inline: auto; }
+}
+@media (max-width: 650px) {
+  .project-page[data-case] .project-heading { grid-template-columns: minmax(0, 1fr); gap: 1.5rem; }
+  .project-page .project-heading h1 { max-width: 18ch; font-size: clamp(2.55rem, 9.5vw, 3.75rem); }
+  .project-page .project-lead { max-width: none; }
+  .project-page .project-heading-art { width: 100%; max-width: 27rem; margin-inline: auto; }
+  .project-page .project-body { font-size: 1rem; line-height: 1.72; }
+  .project-page .project-body > h2 { margin-top: 2rem; }
+}

@@ -1,0 +1,31 @@
+{% assign archive_cases = site.data.archive-projects | where_exp: 'project', 'project.new_tab != true' %}
+{% assign archive_case_found = false %}
+{% assign archive_previous = false %}
+{% assign archive_next = false %}
+{% for project in archive_cases %}
+  {% if archive_case_found %}
+    {% assign archive_next = project %}
+    {% break %}
+  {% endif %}
+  {% if project.url == page.url %}
+    {% assign archive_case_found = true %}
+  {% else %}
+    {% assign archive_previous = project %}
+  {% endif %}
+{% endfor %}
+{% if archive_case_found %}
+<nav class="archive-shell archive-project-nav" aria-label="Adjacent projects">
+  {% if archive_previous %}
+  <a class="archive-project-link archive-project-previous" href="{{ archive_previous.url | relative_url }}" data-reading-direction="backward" rel="prev">
+    <span class="archive-project-direction">Previous project</span>
+    <span class="archive-project-title">{{ archive_previous.title | escape }}</span>
+  </a>
+  {% endif %}
+  {% if archive_next %}
+  <a class="archive-project-link archive-project-next" href="{{ archive_next.url | relative_url }}" data-reading-direction="forward" rel="next">
+    <span class="archive-project-direction">Next project</span>
+    <span class="archive-project-title">{{ archive_next.title | escape }}</span>
+  </a>
+  {% endif %}
+</nav>
+{% endif %}

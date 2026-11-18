@@ -1,10 +1,14 @@
 .project-wheel {
   --wheel-rotation: 0deg;
+  --wheel-step: 72deg;
+  --wheel-sector-left: 14.8%;
+  --wheel-sector-right: 85.2%;
   --wheel-color-one: #e0def4;
   --wheel-color-two: #e4d9f2;
   --wheel-color-three: #dce9f3;
   --wheel-color-four: #f2dfe6;
   --wheel-color-five: #e6ece6;
+  --wheel-color-six: #e9e7cd;
   --wheel-selected: var(--wheel-color-one);
   --wheel-paper: #fbfafc;
   --wheel-ink: #49416e;
@@ -23,12 +27,19 @@
   --wheel-color-three: #eee0e7;
   --wheel-color-four: #d9e5e9;
   --wheel-color-five: #ebe2f2;
+  --wheel-color-six: #e9e7cd;
   --wheel-paper: #fdfaf4;
   --wheel-ink: #495c45;
   --wheel-rule: #8d9a79;
   --wheel-border: #c0c7aa;
   --wheel-line: #596c5245;
   --wheel-hatch: #53674720;
+}
+
+/* Six slices keep the same narrow seams as the original five-slice dial. */
+.project-wheel[data-wheel-total="6"] {
+  --wheel-sector-left: 22%;
+  --wheel-sector-right: 78%;
 }
 
 .project-wheel[data-enhanced] {
@@ -87,6 +98,7 @@
 .project-wheel[data-selection="3"] { --wheel-selected: var(--wheel-color-three); }
 .project-wheel[data-selection="4"] { --wheel-selected: var(--wheel-color-four); }
 .project-wheel[data-selection="5"] { --wheel-selected: var(--wheel-color-five); }
+.project-wheel[data-selection="6"] { --wheel-selected: var(--wheel-color-six); }
 
 .project-wheel [hidden] { display: none; }
 .project-wheel-stage {
@@ -121,7 +133,7 @@
   border: 1px solid var(--wheel-border);
   background:
     repeating-conic-gradient(from -.26deg, var(--wheel-rule) 0deg .52deg, transparent .52deg 6deg),
-    repeating-conic-gradient(from -.36deg, var(--wheel-ink) 0deg .72deg, transparent .72deg 72deg);
+    repeating-conic-gradient(from -.36deg, var(--wheel-ink) 0deg .72deg, transparent .72deg var(--wheel-step));
   mask-image: radial-gradient(farthest-side, transparent calc(100% - 5px), #000 calc(100% - 5px));
 }
 
@@ -216,7 +228,7 @@
   inset: 0;
   border: 0;
   padding: 0;
-  clip-path: polygon(50% 50%, 14.8% 0, 85.2% 0);
+  clip-path: polygon(50% 50%, var(--wheel-sector-left) 0, var(--wheel-sector-right) 0);
   color: var(--ink);
   background:
     repeating-linear-gradient(90deg, var(--wheel-hatch) 0 1px, transparent 1px 4px),
@@ -226,10 +238,11 @@
   transition: filter 180ms ease;
 }
 
-.project-wheel-sector:nth-child(2) { --wheel-phase: 72deg; --wheel-color: var(--wheel-color-two); }
-.project-wheel-sector:nth-child(3) { --wheel-phase: 144deg; --wheel-color: var(--wheel-color-three); }
-.project-wheel-sector:nth-child(4) { --wheel-phase: 216deg; --wheel-color: var(--wheel-color-four); }
-.project-wheel-sector:nth-child(5) { --wheel-phase: 288deg; --wheel-color: var(--wheel-color-five); }
+.project-wheel-sector:nth-child(2) { --wheel-phase: calc(var(--wheel-step) * 1); --wheel-color: var(--wheel-color-two); }
+.project-wheel-sector:nth-child(3) { --wheel-phase: calc(var(--wheel-step) * 2); --wheel-color: var(--wheel-color-three); }
+.project-wheel-sector:nth-child(4) { --wheel-phase: calc(var(--wheel-step) * 3); --wheel-color: var(--wheel-color-four); }
+.project-wheel-sector:nth-child(5) { --wheel-phase: calc(var(--wheel-step) * 4); --wheel-color: var(--wheel-color-five); }
+.project-wheel-sector:nth-child(6) { --wheel-phase: calc(var(--wheel-step) * 5); --wheel-color: var(--wheel-color-six); }
 
 .project-wheel-sector::before,
 .project-wheel-sector::after {
@@ -415,6 +428,13 @@
   pointer-events: none;
 }
 .wheel-design .project-wheel-cover { object-fit: contain; opacity: .32; }
+.wheel-design .project-wheel-cover-fill {
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
 .project-wheel[data-enhanced] .project-wheel-panel {
   display: flex;
   grid-area: 1 / 1;
@@ -434,6 +454,7 @@
 .project-wheel-panel:nth-child(3) { --wheel-frame: var(--wheel-color-three); }
 .project-wheel-panel:nth-child(4) { --wheel-frame: var(--wheel-color-four); }
 .project-wheel-panel:nth-child(5) { --wheel-frame: var(--wheel-color-five); }
+.project-wheel-panel:nth-child(6) { --wheel-frame: var(--wheel-color-six); }
 
 .project-wheel[data-enhanced] .project-wheel-panel[hidden] {
   display: flex;

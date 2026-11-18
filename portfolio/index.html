@@ -18,7 +18,12 @@ main_class: archive-index
 <section class="archive-shell archive-work" id="portfolio" aria-label="Projects">
   <p class="archive-kicker archive-work-label">Selected projects</p>
   {% for project in site.data.archive-projects %}
-    {% assign cover = '/assets/portfolio/' | append: project.image %}
+    {% assign cover_initial = project.image | slice: 0, 1 %}
+    {% if cover_initial == '/' %}
+      {% assign cover = project.image %}
+    {% else %}
+      {% assign cover = '/assets/portfolio/' | append: project.image %}
+    {% endif %}
     {% if forloop.index == 2 %}
   <h2 class="archive-section-title">More from the archive</h2>
   <div class="archive-grid">
