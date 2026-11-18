@@ -3,14 +3,11 @@ const reducedWheelMotion = window.matchMedia('(prefers-reduced-motion: reduce)')
 document.querySelectorAll('[data-project-wheel]').forEach((wheel) => {
   const sectors = Array.from(wheel.querySelectorAll('[role="tab"]'));
   const panels = Array.from(wheel.querySelectorAll('[data-wheel-panel]'));
-  const cardFrame = wheel.querySelector('.project-wheel-panels');
   const previous = wheel.querySelector('[data-wheel-previous]');
   const next = wheel.querySelector('[data-wheel-next]');
   const count = wheel.querySelector('[data-wheel-count]');
   const announcement = wheel.querySelector('[data-wheel-announcement]');
   const sparkles = wheel.querySelector('[data-wheel-sparkles]');
-  const picker = wheel.querySelector('[data-wheel-picker]');
-  const projectChoices = Array.from(picker.querySelectorAll('[data-wheel-pick]'));
   const total = sectors.length;
   const angle = 360 / total;
   let index = 0;
@@ -66,7 +63,6 @@ document.querySelectorAll('[data-project-wheel]').forEach((wheel) => {
       const selected = position === index;
       sector.setAttribute('aria-selected', String(selected));
       sector.tabIndex = selected ? 0 : -1;
-      projectChoices[position].setAttribute('aria-current', String(selected));
       panels[position].hidden = !selected;
       panels[position].inert = !selected;
     });
@@ -88,14 +84,6 @@ document.querySelectorAll('[data-project-wheel]').forEach((wheel) => {
     panels[position].setAttribute('role', 'tabpanel');
     panels[position].setAttribute('aria-labelledby', sector.id);
     panels[position].tabIndex = 0;
-    projectChoices[position].addEventListener('click', () => {
-      selectProject(position, shortestTurn(position), true);
-      const frame = cardFrame.getBoundingClientRect();
-      if (frame.bottom <= 0 || frame.top >= window.innerHeight) {
-        cardFrame.scrollIntoView({ block: 'nearest' });
-        panels[position].focus({ preventScroll: true });
-      }
-    });
     sector.addEventListener('click', () => selectProject(position, shortestTurn(position)));
     sector.addEventListener('keydown', (event) => {
       let turn;
@@ -130,5 +118,4 @@ document.querySelectorAll('[data-project-wheel]').forEach((wheel) => {
   wheel.dataset.enhanced = '';
   wheel.querySelector('[data-wheel-stage]').hidden = false;
   wheel.querySelector('[data-wheel-controls]').hidden = false;
-  picker.hidden = false;
 });

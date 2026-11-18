@@ -34,14 +34,14 @@
 .project-wheel[data-enhanced] {
   display: grid;
   grid-template-columns: minmax(0, 1.02fr) minmax(0, 1fr);
-  grid-template-areas: "wheel detail" ". picker";
+  grid-template-areas: "wheel detail";
   align-items: center;
-  gap: .75rem clamp(22px, 4vw, 56px);
+  gap: clamp(22px, 4vw, 56px);
 }
 
 .project-wheel.wheel-design[data-enhanced] {
   grid-template-columns: minmax(0, 1fr) minmax(0, 1.02fr);
-  grid-template-areas: "detail wheel" "picker .";
+  grid-template-areas: "detail wheel";
 }
 
 .project-wheel-heading {
@@ -67,6 +67,7 @@
   left: -11%;
   width: 122%;
   height: 122%;
+  overflow: visible;
   fill: var(--wheel-ink);
   stroke: var(--wheel-ink);
   stroke-width: .28px;
@@ -499,55 +500,6 @@
   background: var(--wheel-selected);
 }
 
-.project-wheel-picker {
-  grid-area: picker;
-  width: min(100%, 29rem);
-  min-width: 0;
-  color: var(--wheel-ink);
-  font-size: .875rem;
-}
-
-.project-wheel-picker summary {
-  width: fit-content;
-  min-height: 44px;
-  padding: .65em .15em;
-  font-weight: 700;
-  cursor: pointer;
-}
-
-.project-wheel-picker ol {
-  display: grid;
-  gap: 2px;
-  margin-bottom: .4rem;
-  padding: 0;
-  list-style: none;
-}
-
-.project-wheel-picker li > button {
-  display: grid;
-  grid-template-columns: 2.25em minmax(0, 1fr);
-  align-items: center;
-  gap: .45em;
-  width: 100%;
-  min-height: 44px;
-  border: 1px solid transparent;
-  border-radius: 6px;
-  padding: .45em .65em;
-  color: inherit;
-  background: transparent;
-  text-align: left;
-  cursor: pointer;
-}
-
-.project-wheel-picker li > button:hover { border-color: var(--wheel-border); }
-.project-wheel-picker li > button[aria-current="true"] {
-  border-color: var(--wheel-rule);
-  background: color-mix(in srgb, var(--wheel-selected) 56%, transparent);
-  font-weight: 700;
-}
-
-.project-wheel-pick-number { font: .76rem var(--mono); }
-
 .project-wheel-count {
   color: var(--muted);
   font: 500 clamp(.7rem, 1vw, .83rem)/1 "IBM Plex Mono", monospace;
@@ -568,7 +520,7 @@
   .project-wheel[data-enhanced],
   .project-wheel.wheel-design[data-enhanced] {
     grid-template-columns: minmax(0, 1fr);
-    grid-template-areas: "wheel" "detail" "picker";
+    grid-template-areas: "wheel" "detail";
   }
   .project-wheel-dial { width: min(87%, 346px); }
   .project-wheel[data-enhanced] .project-wheel-panel { min-height: 155px; }

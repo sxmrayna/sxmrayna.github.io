@@ -1,0 +1,48 @@
+---
+layout: design
+title: Human-Centered Design
+description: Earlier product design, research, and marketing projects by Xinmeng Song.
+permalink: /portfolio/
+body_class: portfolio-archive
+main_class: archive-index
+---
+<section class="archive-intro" aria-labelledby="archive-title">
+  <div class="archive-shell archive-intro-inner">
+    <p class="archive-kicker">2018–2021</p>
+    <h1 id="archive-title">Human-Centered Design</h1>
+    <p class="archive-deck">Product design, HCI research and creative marketing projects from my studies at the University of Zurich, 2018–2021.</p>
+    <a class="archive-link archive-jump" href="#portfolio">Browse projects <span aria-hidden="true">↓</span></a>
+  </div>
+</section>
+
+<section class="archive-shell archive-work" id="portfolio" aria-label="Projects">
+  <p class="archive-kicker archive-work-label">Selected projects</p>
+  {% for project in site.data.archive-projects %}
+    {% assign cover = '/assets/portfolio/' | append: project.image %}
+    {% if forloop.index == 2 %}
+  <h2 class="archive-section-title">More from the archive</h2>
+  <div class="archive-grid">
+    {% endif %}
+    <article class="{% if forloop.first %}archive-feature{% else %}archive-card{% endif %}" aria-labelledby="archive-project-{{ forloop.index }}">
+      <div class="project-cover {% cycle 'cover-sky', 'cover-lavender', 'cover-linen', 'cover-apricot', 'cover-lavender' %}">
+        <img src="{{ cover | relative_url }}" alt=""{% unless forloop.first %} loading="lazy"{% endunless %} decoding="async">
+      </div>
+      <div class="project-copy">
+        <p class="project-meta"><span>{{ project.context | escape }}</span></p>
+        {% if forloop.first %}<h2 id="archive-project-{{ forloop.index }}">{{ project.title | escape }}</h2>{% else %}<h3 id="archive-project-{{ forloop.index }}">{{ project.title | escape }}</h3>{% endif %}
+        <p class="project-description">{{ project.summary | escape }}</p>
+        <div class="project-actions">
+          <a class="archive-link" href="{% if project.new_tab %}{{ project.url | escape }}{% else %}{{ project.url | relative_url }}{% endif %}"{% if project.new_tab %} target="_blank" rel="noopener"{% endif %}>{{ project.action | default: 'Read case study' | escape }}{% if project.new_tab %} {% include new-tab-arrow.html %}{% endif %}</a>
+        </div>
+      </div>
+    </article>
+    {% if forloop.last and forloop.length > 1 %}
+  </div>
+    {% endif %}
+  {% endfor %}
+</section>
+
+<section class="archive-shell archive-about" id="about" aria-labelledby="about-title">
+  <h2 class="archive-section-title" id="about-title">About this archive</h2>
+  <p>I first put this portfolio together in 2020–2021 while studying business administration and informatics at the University of Zurich. It records the questions I was exploring then, from how people interact with chatbots to how design can support caregivers.</p>
+</section>

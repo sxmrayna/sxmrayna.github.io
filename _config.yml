@@ -1,51 +1,31 @@
 title: Life in Song
 author: Xinmeng Song
-avatar: /logo.png
 email: sxmrayna@gmail.com
-location: Zurich, Switzerland
 description: AI product design and development, personal projects, and writing by Xinmeng Song.
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://sxmrayna.github.io" # the base hostname & protocol for your site, e.g. http://example.com
+baseurl: ""
+url: "https://sxmrayna.github.io"
+logo: logo.png
+lang: en
+shelves_url: "https://mildwildwind.notion.site/Shelves-f881f08db0844389a2ca45ff5d2e8d11?pvs=4"
+places_url: "https://mildwildwind.notion.site/e0280d9d384940a6a08dbbdafc30a4e2?v=b73b4a7cd61d4422901a69120b88ef20"
 
-
-# Build settings
-theme: minima
 plugins:
   - jekyll-feed
   - jekyll-sitemap
   - jekyll-paginate
   - jekyll-seo-tag
 
-# Jekyll SEO Tag (Optional)
-# =========================
-#twitter:
-  #username: 
-  #card: summary
-logo: logo.png
-social:
-  name:
-  links:
-    #- https://twitter.com/ngzhio
-    #- https://www.facebook.com/ngzhio
-    #- https://github.com/ngzhio
-lang: en
-shelves_url: "https://mildwildwind.notion.site/Shelves-f881f08db0844389a2ca45ff5d2e8d11?pvs=4"
-places_url: "https://mildwildwind.notion.site/e0280d9d384940a6a08dbbdafc30a4e2?v=b73b4a7cd61d4422901a69120b88ef20"
-
 paginate: 10
 paginate_path: /blog/page/:num/
 
 exclude:
-   - .sass-cache/
-   - .jekyll-cache/
-   - gemfiles/
-   - Gemfile
-   - Gemfile.lock
-   - node_modules/
-   - vendor/bundle/
-   - vendor/cache/
-   - vendor/gems/
-   - vendor/ruby/
-   - README.md
-   - scripts/
-   - jekyll-theme-hamilton.gemspec
+  - .sass-cache/
+  - .jekyll-cache/
+  - .jekyll-metadata
+  - gemfiles/
+  - Gemfile
+  - Gemfile.lock
+  - node_modules/
+  - vendor/
+  - README.md
+  - scripts/

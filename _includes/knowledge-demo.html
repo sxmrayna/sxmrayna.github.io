@@ -1,24 +1,64 @@
 <figure class="knowledge-demo">
-  <figcaption>Illustrative interface · fictional notes</figcaption>
+  <figcaption>Illustrative interface · fictional learning session</figcaption>
   <div class="knowledge-demo-window">
-    <section class="knowledge-demo-notes" aria-labelledby="demo-notes-title">
-      <div class="knowledge-demo-top"><span aria-hidden="true"></span><strong id="demo-notes-title">Logseq</strong></div>
+    <section class="knowledge-demo-agent" aria-labelledby="demo-capture-agent-title">
+      <div class="knowledge-demo-top"><span aria-hidden="true"></span><strong id="demo-capture-agent-title">AI workspace</strong></div>
       <div class="knowledge-demo-panel">
-        <p class="knowledge-demo-kicker">Selected pages</p>
-        <ul>
-          <li><strong>Usability notes</strong><span>People missed the first step when setting up their account.</span></li>
-          <li><strong>Planning notes</strong><span>Agree which part of onboarding to improve first.</span></li>
-        </ul>
+        <p class="knowledge-demo-kicker">Explore a new idea</p>
+        <p class="knowledge-demo-prompt">I’m reading about progressive disclosure. When should optional settings appear?</p>
+        <div class="knowledge-demo-draft">
+          <p>Keep the essential choices visible. Offer secondary settings when they become relevant to the user’s task.</p>
+          <p>Which settings would someone need before completing their first setup step?</p>
+        </div>
       </div>
     </section>
-    <section class="knowledge-demo-agent" aria-labelledby="demo-agent-title">
-      <div class="knowledge-demo-top"><span aria-hidden="true"></span><strong id="demo-agent-title">AI workspace</strong><small>MCP context</small></div>
+    <section class="knowledge-demo-notes" aria-labelledby="demo-capture-notes-title">
+      <div class="knowledge-demo-top"><span aria-hidden="true"></span><strong id="demo-capture-notes-title">Logseq plugin</strong><small>Draft inbox</small></div>
       <div class="knowledge-demo-panel">
-        <p class="knowledge-demo-prompt">Help me prepare for a discussion about simplifying onboarding.</p>
+        <p class="knowledge-demo-kicker">Organise after learning</p>
+        <ul>
+          <li><strong>Progressive disclosure</strong><span>Core idea, an onboarding example and the questions I explored.</span></li>
+          <li><strong>Question to revisit</strong><span>Which choices can wait until after the first successful action?</span></li>
+          <li><strong>Original source</strong><span><a href="https://www.nngroup.com/articles/progressive-disclosure/" target="_blank" rel="noopener">NN/g · Progressive Disclosure {% include new-tab-arrow.html %}</a></span></li>
+        </ul>
+        <p class="knowledge-demo-review">Preview the outline before importing it into Logseq.</p>
+      </div>
+    </section>
+  </div>
+</figure>
+
+<figure class="knowledge-demo">
+  <figcaption>Illustrative interface · fictional notes, public research reference</figcaption>
+  <div class="knowledge-demo-window">
+    <section class="knowledge-demo-notes" aria-labelledby="demo-reuse-notes-title">
+      <div class="knowledge-demo-top"><span aria-hidden="true"></span><strong id="demo-reuse-notes-title">Logseq</strong><small>Retrieved through MCP</small></div>
+      <div class="knowledge-demo-panel">
+        <p class="knowledge-demo-kicker">Relevant saved notes</p>
+        <ul>
+          <li id="knowledge-source-1"><strong>[1] Learning / Progressive disclosure</strong><span>Secondary settings can wait until they are relevant.</span></li>
+          <li id="knowledge-source-2"><strong>[2] Usability / First setup step</strong><span>A participant overlooked the starting action in a fictional usability session.</span></li>
+        </ul>
+        <div class="knowledge-demo-research" id="knowledge-source-3">
+          <p class="knowledge-demo-kicker">Research for this task</p>
+          <p><strong>[3] Visibility of System Status</strong></p>
+          <p>Feedback helps people understand what is happening and whether an action succeeded.</p>
+          <a href="https://www.nngroup.com/articles/visibility-system-status/" target="_blank" rel="noopener">Read the NN/g article {% include new-tab-arrow.html %}</a>
+        </div>
+      </div>
+    </section>
+    <section class="knowledge-demo-agent" aria-labelledby="demo-reuse-agent-title">
+      <div class="knowledge-demo-top"><span aria-hidden="true"></span><strong id="demo-reuse-agent-title">AI workspace</strong><small>Notes + research</small></div>
+      <div class="knowledge-demo-panel">
+        <p class="knowledge-demo-prompt">I’m preparing a product discussion about account setup. I remember notes about “progressive disclosure” and “first setup step”. Find them, research any gaps and draft a brief with questions and sources.</p>
         <div class="knowledge-demo-draft">
-          <p class="knowledge-demo-kicker">Draft discussion brief</p>
-          <p>Start with the first setup step. Ask the team how to make that step visible and what evidence would tell us the change helped.</p>
-          <p class="knowledge-demo-review">Review draft before saving to Logseq <span aria-hidden="true">↗</span></p>
+          <p class="knowledge-demo-kicker">Discussion brief</p>
+          <ul>
+            <li>Test a clearer starting action. <a class="knowledge-demo-cite" href="#knowledge-source-2" aria-label="View source 2, the fictional usability note">[2]</a></li>
+            <li>Reveal secondary choices when they are needed. <a class="knowledge-demo-cite" href="#knowledge-source-1" aria-label="View source 1, the saved learning note">[1]</a></li>
+            <li>Show progress and acknowledge completed actions. <a class="knowledge-demo-cite" href="#knowledge-source-3" aria-label="View source 3, the research reference">[3]</a></li>
+          </ul>
+          <p>What evidence would show that the first step is clearer?</p>
+          <p class="knowledge-demo-review">Review the brief, then send useful parts to the Logseq draft inbox.</p>
         </div>
       </div>
     </section>

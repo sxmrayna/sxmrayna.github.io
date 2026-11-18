@@ -36,7 +36,12 @@
         {% assign cover = '/assets/portfolio/' | append: project.image %}
         <img class="project-wheel-cover" src="{{ cover | relative_url }}" alt="" loading="lazy" decoding="async">
         {% endif %}
-        {% if project.context %}<p class="eyebrow">{{ project.context | escape }}</p>{% endif %}
+        {% assign project_context = project.context %}
+        {% if project.url %}
+          {% assign project_page = site.pages | where: 'url', project.url | first %}
+          {% assign project_context = project_page.context | default: project.context %}
+        {% endif %}
+        {% if project_context %}<p class="eyebrow">{{ project_context | escape }}</p>{% endif %}
         <h3>{{ project.title | escape }}</h3>
         {% if project.summary %}<p class="project-wheel-summary">{{ project.summary | escape }}</p>{% endif %}
         {% if project.url %}
@@ -53,18 +58,4 @@
     </div>
     <p class="project-wheel-announcement" data-wheel-announcement aria-live="polite" aria-atomic="true"></p>
   </div>
-
-  <details class="project-wheel-picker" data-wheel-picker hidden>
-    <summary>Choose a project</summary>
-    <ol aria-label="{{ include.label | escape }} by name">
-      {% for project in include.projects %}
-      <li>
-        <button type="button" data-wheel-pick aria-controls="{{ include.id }}-panel-{{ forloop.index }}">
-          <span class="project-wheel-pick-number" aria-hidden="true">{% if forloop.index < 10 %}0{% endif %}{{ forloop.index }}</span>
-          <span>{{ project.title | escape }}</span>
-        </button>
-      </li>
-      {% endfor %}
-    </ol>
-  </details>
 </div>

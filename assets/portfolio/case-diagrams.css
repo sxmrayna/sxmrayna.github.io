@@ -14,6 +14,12 @@
   --case-accent: #50674b;
 }
 
+.project-page[data-case="insurance"] {
+  --case-wash: #e5edf6;
+  --case-line: #d0dcea;
+  --case-accent: #526c89;
+}
+
 .project-page[data-case] .project-heading {
   border-color: var(--case-line);
   border-top-color: var(--case-accent);
@@ -24,6 +30,14 @@
 .project-page[data-case] .project-heading .back-link {
   color: var(--case-accent);
 }
+
+.project-body a[target="_blank"] {
+  display: inline-flex;
+  align-items: baseline;
+  gap: .16em;
+  max-width: 100%;
+}
+.project-body a[target="_blank"] > .new-tab-arrow { align-self: center; }
 
 .project-body .case-diagram {
   --diagram-wash: var(--blush);
@@ -36,6 +50,7 @@
 
 .project-body .case-diagram-coaching { --diagram-wash: var(--sky); }
 .project-body .case-diagram-assistant { --diagram-wash: var(--sage); }
+.project-body .case-diagram-insurance { --diagram-wash: var(--sky); }
 
 .case-diagram figcaption {
   margin-bottom: .9rem;
@@ -122,7 +137,7 @@
 .knowledge-demo {
   margin: 1.8rem 0;
   color: var(--muted);
-  font-size: .84rem;
+  font-size: .88rem;
 }
 .knowledge-demo figcaption {
   margin-bottom: .45em;
@@ -191,6 +206,15 @@
   color: #5d4275;
   font-weight: 650;
 }
+.knowledge-demo-draft > * + * { margin-top: .55rem; }
+.knowledge-demo-draft ul { margin-block: .55rem; padding-left: 1.1rem; }
+.knowledge-demo-draft li + li { margin-top: .4rem; }
+.knowledge-demo-cite { color: var(--plum); font-size: .85em; white-space: nowrap; }
+.knowledge-demo-research { margin-top: .8rem; padding-top: .65rem; border-top: 1px solid #b9c8ba; }
+.knowledge-demo-research > * + * { margin-top: .4rem; }
+.knowledge-demo a .new-tab-arrow { width: 1em; height: 1em; vertical-align: -.12em; }
+.knowledge-demo-notes li:target,
+.knowledge-demo-research:target { background: #f8faf6; outline: 1px solid #a9bea7; border-radius: 3px; }
 @media (max-width: 520px) {
   .knowledge-demo-window { grid-template-columns: minmax(0, 1fr); }
 }

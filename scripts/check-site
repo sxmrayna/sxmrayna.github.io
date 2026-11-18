@@ -1,0 +1,89 @@
+#!/usr/bin/env python3
+"""Check local page/media links in a built Jekyll site, including filename case."""
+import argparse
+from collections import Counter
+from html.parser import HTMLParser
+from pathlib import Path
+import posixpath
+import re
+import sys
+from urllib.parse import unquote, urljoin, urlsplit
+
+ORIGIN = 'https://sxmrayna.github.io'
+
+class PageLinks(HTMLParser):
+    def __init__(self):
+        super().__init__(convert_charrefs=True)
+        self.links = []
+        self.ids = set()
+    def handle_starttag(self, tag, attrs):
+        attrs = dict(attrs)
+        if attrs.get('id'):
+            self.ids.add(attrs['id'])
+        if tag == 'a' and attrs.get('name'):
+            self.ids.add(attrs['name'])
+        for attr in ('href', 'src', 'poster', 'data-src'):
+            if attrs.get(attr):
+                self.links.append((attrs[attr], self.getpos()[0], tag))
+        srcset = attrs.get('srcset', '')
+        if srcset and not srcset.lstrip().startswith('data:'):
+            for candidate in srcset.split(','):
+                parts = candidate.strip().split()
+                if parts:
+                    self.links.append((parts[0], self.getpos()[0], tag))
+    handle_startendtag = handle_starttag
+
+def main():
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('site', nargs='?', default='/tmp/life-in-song-preview', type=Path)
+    parser.add_argument('--ignore-fragments', action='store_true', help='Only check page and resource paths')
+    args = parser.parse_args()
+    root = args.site.resolve()
+    if not (root / 'index.html').is_file():
+        parser.error(f'Build the site first; no index.html in {root}')
+    files = {str(p.relative_to(root)) for p in root.rglob('*') if p.is_file()}
+    html = {}
+    for relative in sorted(files):
+        if relative.endswith('.html'):
+            page = PageLinks()
+            page.feed((root / relative).read_text(encoding='utf-8'))
+            html[relative] = page
+    errors = set()
+    checked = 0
+    def check(source, value, line, kind):
+        nonlocal checked
+        if not value or value.startswith(('data:', 'mailto:', 'tel:', 'javascript:', 'logseq:', 'blob:')):
+            return
+        url = urlsplit(urljoin(ORIGIN + '/' + source, value))
+        if url.scheme not in ('http', 'https') or url.netloc != 'sxmrayna.github.io':
+            return
+        path = posixpath.normpath(unquote(url.path)).lstrip('/')
+        if path == '.':
+            path = ''
+        target = path if path in files else posixpath.join(path, 'index.html')
+        checked += 1
+        if target not in files:
+            errors.add((source, line, 'missing path', value))
+        elif not args.ignore_fragments and url.fragment and target in html:
+            fragment = unquote(url.fragment)
+            if not fragment.startswith(':~:text=') and fragment not in html[target].ids:
+                errors.add((source, line, 'missing anchor', value))
+    for source, page in html.items():
+        for value, line, kind in page.links:
+            check(source, value, line, kind)
+    for source in sorted(files):
+        if source.endswith('.css'):
+            content = re.sub(r'/\*.*?\*/', '', (root/source).read_text(encoding='utf-8'), flags=re.S)
+            for match in re.finditer(r'url\(\s*[\"\']?([^\"\')]+)[\"\']?\s*\)', content):
+                check(source, match.group(1).strip(), content[:match.start()].count('\n') + 1, 'css')
+    print(f'Checked {len(html)} HTML pages, {sum(name.endswith(".css") for name in files)} stylesheets and {checked} local references.')
+    if errors:
+        print(f'{len(errors)} broken local references:')
+        for source, line, reason, value in sorted(errors):
+            print(f'  {source}:{line}: {reason}: {value}')
+        return 1
+    print('All local page, anchor and resource references resolve with exact filename case.')
+    return 0
+
+if __name__ == '__main__':
+    sys.exit(main())

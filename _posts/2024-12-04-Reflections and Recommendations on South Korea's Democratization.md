@@ -57,6 +57,7 @@ Under censorship, we volunteer to be blind, deaf, and silent. In reading Han Kan
 
 1. [Fate, Destiny and Moon Jae-in](https://www.goodreads.com/book/show/36157616-fate-destiny-and-moon-jae-in)
      - Author: Moon Jae-in
+     - My rating: 8/10
      - *The memoir of Moon Jae-in, South Korea’s former president, detailing his life from his childhood during the tumult of Korean War to his political career, providing insight into the country’s journey towards democracy.*
 	
 2. [Human Acts](https://www.goodreads.com/book/show/30091914-human-acts)

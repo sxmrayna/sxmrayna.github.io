@@ -1,4 +1,7 @@
+{%- capture new_tab_arrow_svg -%}
 <svg class="new-tab-arrow" viewBox="0 0 24 24" width="19" height="19" fill="none" aria-hidden="true" focusable="false">
   <path d="M4 19c.6-5 3.5-8.3 11-9.7M10.5 6.6c1.9.5 3.4 1.4 4.5 2.7-.5 1.7-.8 3.2-.7 4.6" stroke="currentColor" stroke-width="1.55" stroke-linecap="round" stroke-linejoin="round"/>
   <path d="M19 1.7c.15 2 1.18 3 3.2 3.2-2.02.17-3.05 1.2-3.2 3.2-.17-2-1.2-3.03-3.2-3.2 2-.2 3.03-1.2 3.2-3.2Z" fill="currentColor"/>
 </svg>
+{%- endcapture -%}
+{{- new_tab_arrow_svg | strip_newlines -}}

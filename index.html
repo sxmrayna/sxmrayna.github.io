@@ -16,8 +16,8 @@ body_class: portfolio-home
       <ul class="hero-roles" aria-label="A little about me">
         <li><button type="button" class="hero-role" data-photo-pair="city" aria-pressed="false">AI product builder</button></li>
         <li><button type="button" class="hero-role" data-photo-pair="snow" aria-pressed="false">Wanderer</button></li>
-        <li><button type="button" class="hero-role" data-photo-pair="temple" aria-pressed="false">History and arts enthusiast</button></li>
-        <li><button type="button" class="hero-role" data-photo-pair="camera" aria-pressed="false">Dreamer and doer</button></li>
+        <li><button type="button" class="hero-role" data-photo-pair="temple" aria-pressed="false">History and Arts enthusiast</button></li>
+        <li><button type="button" class="hero-role" data-photo-pair="camera" aria-pressed="false">Dreamer & Doer</button></li>
       </ul>
       <p class="hero-biography">
         <span>I grew up in <em>Beijing</em>&nbsp;🇨🇳 and now live in <em>Zurich</em>&nbsp;🇨🇭.</span>
@@ -113,11 +113,11 @@ body_class: portfolio-home
 
 <div class="home-project-wash">
   <section class="section shell project-editorial" id="work" aria-labelledby="work-title">
-    {% include project-wheel.html projects=site.data.projects id='ai-projects' label='AI projects' variant='wheel-ai' title='AI‑powered Projects' heading_id='work-title' intro='Personal projects and selected work from my AI product roles.' %}
+    {% include project-wheel.html projects=site.data.projects id='ai-projects' label='AI projects' variant='wheel-ai' title='AI-Powered Projects' heading_id='work-title' intro='Personal projects and selected work from my AI product roles.' %}
   </section>
 
   <section class="section shell project-editorial" id="design-work" aria-labelledby="design-work-title">
-    {% include project-wheel.html projects=site.data.archive-projects id='design-projects' label='Human-centered design' variant='wheel-design' title='Human-centered Design' heading_id='design-work-title' %}
+    {% include project-wheel.html projects=site.data.archive-projects id='design-projects' label='Human-centered design' variant='wheel-design' title='Human-Centered Design' heading_id='design-work-title' intro='Product design, HCI research and creative marketing projects from my studies at the University of Zurich, 2018–2021.' %}
   </section>
 
   <section class="writing-section" id="writing" aria-labelledby="writing-title">
@@ -127,7 +127,7 @@ body_class: portfolio-home
       <div class="writing-copy">
         <p class="eyebrow">Blog</p>
         <h2 id="writing-title"><a class="writing-title-link" href="{{ '/blog/' | relative_url }}">{% include river-title.html %}</a></h2>
-        <p class="journal-deck">Essays and field notes on travel, culture and everyday life.</p>
+        <p class="journal-deck">Even water has memory that no matter where it ends up, it’ll always remember where it’s been.</p>
         <a class="writing-browse" href="{{ '/blog/' | relative_url }}">Browse the blog</a>
       </div>
       {% include botanical-sprig.html class="sprig-right" %}

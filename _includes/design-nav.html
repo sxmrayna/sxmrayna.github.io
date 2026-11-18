@@ -1,0 +1,20 @@
+<header class="{% if page.body_class == 'portfolio-archive' %}archive-header{% else %}archive-detail-header{% endif %}">
+  <nav class="archive-shell archive-nav" aria-label="Main navigation">
+    <a class="archive-brand" href="{{ '/' | relative_url }}" aria-label="{{ site.title | escape }} by {{ site.author | escape }}, home">{% include song-wordmark.html %}</a>
+    <ul class="archive-nav-links">
+      <li><a href="{{ '/#experience' | relative_url }}">Experience</a></li>
+      <li><a href="{{ '/#work' | relative_url }}">Projects</a></li>
+      <li><a href="{{ '/blog/' | relative_url }}" target="_blank" rel="noopener">Blog {% include new-tab-arrow.html %}</a></li>
+      <li><a href="{{ site.shelves_url | escape }}" target="_blank" rel="noopener">Shelves {% include new-tab-arrow.html %}</a></li>
+    </ul>
+  </nav>
+  {% unless page.body_class == 'portfolio-archive' %}
+  <nav aria-label="Breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="{{ '/portfolio/#portfolio' | relative_url }}">Portfolio archive</a></li>
+      {% if page.parent_title %}<li class="breadcrumb-item"><a href="{{ page.parent_url | relative_url }}">{{ page.parent_title | escape }}</a></li>{% endif %}
+      <li class="breadcrumb-item active" aria-current="page">{{ page.breadcrumb_title | default: page.title | escape }}</li>
+    </ol>
+  </nav>
+  {% endunless %}
+</header>

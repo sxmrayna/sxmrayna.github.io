@@ -1,21 +1,23 @@
-- title: AI-powered personal knowledge base
+- title: AI-Powered Personal Knowledge Base
   image: cases/knowledge.webp
   context: Personal project
   url: /projects/personal-knowledge-base/
-  summary: A way to bring my notes into an AI conversation and save useful ideas for later.
-- title: RAG-based AI coaching app
+  summary: I independently designed and built a Logseq plugin and MCP bridge for my own work, learning and reflection, with source-linked retrieval and reviewed imports.
+- title: RAG-Based AI Coaching App
   image: cases/coaching.webp
-  context: Unlocking Eve
+  context: Live
   url: /projects/ai-coaching/
-  summary: An on-demand coach that helps leaders turn assessment insights into practical next steps.
-- title: AI personal assistant
+  summary: A live AI coaching platform built around leadership assessment insights. My work spanned architecture, full-stack development, model evaluation, pricing analysis and launch.
+- title: Organizational AI Agents
   image: cases/assistant.webp
-  context: Team project · In development
+  context: Enterprise AI & Automation
   url: /projects/ai-personal-assistant/
-  summary: A work assistant designed to help a team prepare, coordinate and follow up using shared knowledge.
-- title: AI-powered automation pipeline for venture capital
+  summary: I turn stakeholder needs into organizational AI agents and automation across Google Workspace and Microsoft 365, connecting shared knowledge, working files and rule-based checks.
+- title: AI-Powered Broker Intelligence
+  image: cases/insurance.webp
+  context: IBM watsonx Agentic AI Challenge
+  url: /projects/axa-broker-intelligence/
+  summary: An AXA team challenge for market monitoring and broker briefings. I led stakeholder discovery and helped turn client needs into the MVP, chat interface and agent workflows.
+- title: AI-Powered Automation Pipeline for Venture Capital
   image: project-covers/venture-capital.webp
-  summary: Turns information from investment documents into a consistent format so teams can review it with less manual work.
-- title: AI-powered job search tool
-  image: project-covers/job-search.webp
-  summary: Helps me compare roles against my priorities and keep track of opportunities I want to follow up on.
+  summary: Working with investment stakeholders, I translated a manual workflow into Microsoft 365 agents and automation for financial data extraction and reconciliation, with code-based checks against source files.

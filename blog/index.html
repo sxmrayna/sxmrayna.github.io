@@ -1,7 +1,7 @@
 ---
 layout: default
 title: River of Memories
-description: Essays and field notes on travel, culture and everyday life by Xinmeng Song.
+description: Even water has memory that no matter where it ends up, it’ll always remember where it’s been.
 body_class: journal-page
 ---
 
@@ -12,7 +12,7 @@ body_class: journal-page
     {% include botanical-sprig.html class="sprig-right" %}
     {% include glowing-reader.html class="journal-avatar" %}
     <h1>{% include river-title.html %}</h1>
-    <p class="journal-deck">Essays and field notes on travel, culture and everyday life.</p>
+    <p class="journal-deck">Even water has memory that no matter where it ends up, it’ll always remember where it’s been.</p>
     <nav class="archive-nav" aria-label="Browse writing">
       <a href="{{ '/years/' | relative_url }}">By year</a>
       <a href="{{ '/categories/' | relative_url }}">Categories</a>
@@ -33,9 +33,11 @@ body_class: journal-page
       <time datetime="{{ post.date | date: '%Y-%m-%d' }}">{{ post.date | date: '%b %d, %Y' }}</time>
       <div>
         <h2><a href="{{ post.url | relative_url }}">{{ post.title | escape }}</a></h2>
-        {% if post.categories.size > 0 %}
-        <p>{{ post.categories | join: ' · ' | escape }}</p>
+        {% assign excerpt = post.excerpt | strip_html | normalize_whitespace %}
+        {% if excerpt == empty %}
+          {% assign excerpt = post.content | markdownify | strip_html | normalize_whitespace %}
         {% endif %}
+        <p class="journal-excerpt">{{ excerpt | default: 'Photo journal' | truncate: 180 | escape_once }}</p>
       </div>
     </article>
     {% endfor %}

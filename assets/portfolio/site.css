@@ -834,6 +834,13 @@ button { font: inherit; }
 .journal-item h2 a { text-decoration: none; }
 .journal-item h2 a::after { position: absolute; inset: 0; content: ""; }
 .journal-item p { margin-top: .23em; color: var(--muted); font-size: .76rem; }
+.journal-item .journal-excerpt {
+  max-width: 66ch;
+  margin: .65rem 0 .4rem;
+  font-size: .99rem;
+  line-height: 1.65;
+  overflow-wrap: anywhere;
+}
 .pagination {
   display: grid;
   grid-template-columns: 1fr auto 1fr;

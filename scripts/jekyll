@@ -1,0 +1,11 @@
+#!/bin/sh
+set -eu
+
+cd "$(dirname "$0")/.."
+
+# Find user-installed Ruby executables even in a fresh macOS terminal.
+site_ruby_user_dir="$(ruby -e 'puts Gem.user_dir')"
+export GEM_HOME="${GEM_HOME:-$site_ruby_user_dir}"
+export PATH="$GEM_HOME/bin:$PATH"
+
+exec bundle exec jekyll "$@"
