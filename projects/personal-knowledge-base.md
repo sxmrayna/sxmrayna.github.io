@@ -15,6 +15,8 @@ I hope this approach could be insightful for people with similar needs for conne
 
 When I’m learning something new, I move between articles, videos, screenshots and questions. I want to follow the ideas and ask follow-up questions while they are still fresh. Afterwards, I ask the AI agent to organise the useful material, explanations and my own observations into structured notes, with sources and examples attached.
 
+Using my existing Markdown notes as examples, the agent follows my usual headings, nesting and format while adapting the content to each request. It prepares a draft for Logseq import, so I spend less time organising notes and more time learning.
+
 I built a <a href="https://logseq.com/" target="_blank" rel="noopener" style="color: #527761;"><strong>Logseq</strong> {% include new-tab-arrow.html %}</a> plugin and a shared Model Context Protocol (MCP) bridge. The bridge gives AI agents tools to search saved notes, read source excerpts and submit structured drafts. The plugin lets me preview and confirm those drafts before they enter my knowledge base.
 
 ## Applying past learning to a new task
@@ -25,7 +27,7 @@ The agent searches Logseq for relevant notes and passages, then researches addit
 
 ## A walkthrough with fictional notes
 
-Imagine I’m learning about onboarding. I read an article about progressive disclosure, collect a screenshot and discuss which settings a new user needs to see first. At the end, I ask the agent to organise the concept, example and open question into a note for Logseq.
+Imagine I’m learning about onboarding. I read an article about progressive disclosure, collect a screenshot and discuss which settings a new user needs to see first. At the end, I ask the agent to organise the concept, example and open question into a Logseq note that follows my usual format.
 
 Later, I’m preparing a product discussion about users getting stuck during account setup. I remember the keywords “progressive disclosure” and “first setup step”. The agent finds the relevant learning and usability notes, adds research on communicating progress, and drafts a discussion brief with sources attached. I review the proposed changes and questions, then decide which parts to keep for future work.
 
@@ -37,7 +39,7 @@ Later, I’m preparing a product discussion about users getting stuck during acc
 
 **Source-linked retrieval.** I implemented block-level keyword search over selected Logseq folders. Results include the page, parent context, an excerpt and a link to the original note; the agent can request a longer passage using a result ID. This gives a summary an inspectable source and keeps retrieval separate from the agent’s interpretation.
 
-**Native note structure.** I built the importer to turn headings and nested lists into Logseq blocks, retaining source references and supporting selected attachments. The draft preview lets me review the complete outline before importing it, with useful explanations, examples and images kept together.
+**Native note structure.** Existing notes or templates guide the draft’s layout. I built the importer to turn headings and nested lists into Logseq blocks, retaining source references and supporting selected attachments. The draft preview lets me review the complete outline before importing it, with useful explanations, examples and images kept together.
 
 **Recoverable imports.** I store drafts durably, detect repeated submissions and track import acknowledgements. The plugin checks the active graph and existing import markers before writing, so a retry can recognise a note that was already saved. These details matter when an interruption leaves the agent, bridge and plugin with different views of what completed.
 
